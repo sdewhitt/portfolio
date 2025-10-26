@@ -9,6 +9,9 @@ export default function Header() {
         <Link href="/" className="text-lg font-semibold">
           Home
         </Link>
+        <Link href="/chat" className="text-lg font-semibold">
+          Chat
+        </Link>
 
         <nav className="flex gap-4 text-sm">
           <a href="#projects" className="hover:underline">
