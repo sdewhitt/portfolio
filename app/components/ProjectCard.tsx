@@ -14,7 +14,10 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold">{project.title}</h3>
+          <h3 className="text-lg font-semibold">{project.live ? 
+            <a href={project.live} target="_blank" rel="noreferrer" className="hover:underline">{project.title}</a> 
+            : project.title}
+          </h3>
           <p className="mt-1 text-sm text-muted-foreground">{project.description}</p>
 
           <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
@@ -23,12 +26,12 @@ export default function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
 
-          <div className="mt-3 flex gap-3 text-sm">
+          <div className="mt-3 flex gap-8 text-sm">
             {project.github && (
-              <a href={project.github} target="_blank" rel="noreferrer" className="hover:underline">Code</a>
+              <a href={project.github} target="_blank" rel="noreferrer" className="hover:underline">GitHub</a>
             )}
             {project.live && (
-              <a href={project.live} target="_blank" rel="noreferrer" className="hover:underline">Live</a>
+              <a href={project.live} target="_blank" rel="noreferrer" className="hover:underline">Link</a>
             )}
           </div>
         </div>

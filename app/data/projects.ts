@@ -13,7 +13,7 @@ export const projects: Project[] = [
     id: "proj-1",
     title: "Evallm",
     description: "Web platform to assess performance of large language models",
-    tech: ["Next.js", "TypeScript", "React", "Tailwind", "OAuth2", "MongoDB"],
+    tech: ["Next.js", "Vercel", "TypeScript", "React", "Tailwind", "OAuth2", "MongoDB"],
     github: "https://github.com/sdewhitt/evallm-v2",
     live: "https://evallm.vercel.app/",
     image: "/EvallmLogo.png",
@@ -22,9 +22,9 @@ export const projects: Project[] = [
     id: "proj-2",
     title: "RAG Portfolio Bot",
     description: "A RAG chatbot built to answer questions about my experience, integrated into this website!",
-    tech: ["Next.js", "TypeScript", "React", "Tailwind", "OpenAI API", "Supabase"],
+    tech: ["Next.js", "Vercel", "TypeScript", "React", "Tailwind", "OpenAI API", "Supabase"],
     github: "https://github.com/sdewhitt/portfolio",
-    image: "/project-2.png",
+    image: "/bot.svg",
   },
 ];
 
