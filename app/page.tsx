@@ -11,12 +11,10 @@ export default function Home() {
         <section className="grid gap-8 md:grid-cols-2 md:items-center">
           <div>
             <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
-              Your Name
+              Seth DeWhitt
             </h1>
             <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-              I am a software engineer focused on building accessible, performant,
-              and delightful web applications. I enjoy working on front-end
-              architecture, TypeScript, and design systems.
+              I'm a driven software engineer focused on inspiring & impactful full-stack projects.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
@@ -27,7 +25,7 @@ export default function Home() {
                 View Projects
               </a>
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:sethjtdewhitt@gmail.com"
                 className="inline-flex items-center rounded-full border border-solid border-foreground px-4 py-2 text-sm font-medium"
               >
                 Contact Me
@@ -38,7 +36,7 @@ export default function Home() {
           <div className="flex items-center justify-center">
             <div className="relative h-48 w-48 overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-900">
               <Image
-                src="/profile-placeholder.png"
+                src="/Headshot.JPG"
                 alt="Profile"
                 fill
                 sizes="(min-width: 768px) 48rem, 100vw"
@@ -50,10 +48,9 @@ export default function Home() {
         </section>
 
         <section id="projects" className="mt-16">
-          <h2 className="text-2xl font-semibold">Selected Projects</h2>
+          <h2 className="text-2xl font-semibold">Highlighted Projects</h2>
           <p className="mt-2 text-muted-foreground">
-            A short selection of projects showcasing problem-solving, product
-            thinking and code quality.
+            A few of my favorite projects :)
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">

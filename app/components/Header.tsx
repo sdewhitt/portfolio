@@ -7,7 +7,7 @@ export default function Header() {
     <header className="border-b border-border">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         <Link href="/" className="text-lg font-semibold">
-          Your Name
+          Home
         </Link>
 
         <nav className="flex gap-4 text-sm">
@@ -17,7 +17,7 @@ export default function Header() {
           <a href="#about" className="hover:underline">
             About
           </a>
-          <a href="mailto:your.email@example.com" className="hover:underline">
+          <a href="mailto:sethjtdewhitt@gmail.com" className="hover:underline">
             Contact
           </a>
         </nav>
