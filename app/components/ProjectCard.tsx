@@ -5,7 +5,7 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group rounded-2xl border border-border p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-foreground/20 hover:-translate-y-1 bg-background">
       <div className="flex flex-col gap-4">
-        <div className="relative h-48 w-full overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-900">
+        <div className="relative h-48 w-full overflow-hidden rounded-lg bg-zinc-700 dark:bg-zinc-900">
           {project.image ? (
             <Image 
               src={project.image} 
@@ -73,7 +73,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
-                Live Demo
+                Link
               </a>
             )}
           </div>

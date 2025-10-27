@@ -13,7 +13,7 @@ export const projects: Project[] = [
     id: "proj-1",
     title: "Evallm",
     description: "Web platform to assess performance of large language models",
-    tech: ["Next.js", "Vercel", "TypeScript", "React", "Tailwind", "OAuth2", "MongoDB"],
+    tech: ["Next.js", "Vercel", "TypeScript", "React", "Tailwind", "OAuth2", "MongoDB", "Groq API"],
     github: "https://github.com/sdewhitt/evallm-v2",
     live: "https://evallm.vercel.app/",
     image: "/EvallmLogo.png",

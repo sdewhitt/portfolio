@@ -4,9 +4,18 @@ import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "./data/projects";
 
+import { cn } from "@/lib/utils";
+import { DotPattern } from "@/components/ui/dot-pattern"
+import { Skills } from "@/components/Skills";
+
 export default function Home() {
   return (
     <div className="bg-background text-foreground font-sans">
+        <DotPattern
+            className={cn(
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+            )}
+        />
       <main className="container mx-auto px-6 py-20 md:py-28">
         {/* Hero Section */}
         <section className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16 md:items-center mb-32">
@@ -18,10 +27,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-              Software Engineer building{" "}
-              <span className="text-foreground font-semibold">inspiring</span> &{" "}
-              <span className="text-foreground font-semibold">impactful</span>{" "}
-              full-stack experiences
+                Full-Stack Software Engineer based in Seattle, WA
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -74,7 +80,7 @@ export default function Home() {
 
           <div className="flex items-center justify-center md:justify-end animate-fade-in-delay">
             <div className="relative group">
-                <div className="absolute -inset-1 bg-linear-to-r from-emerald-600 via-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="absolute -inset-1 bg-linear-to-r from-emerald-600 via-purple-600 to-yellow-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 ring-1 ring-border">
                 <Image
                   src="/Headshot.JPG"
@@ -112,21 +118,33 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="mt-32 scroll-mt-20">
-          <div className="rounded-2xl border border-border bg-foreground/5 p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-3xl">
-              <p>
-                I'm passionate about creating elegant solutions to complex problems. 
-                With experience in full-stack development, I focus on building applications 
-                that are not only functional but also delightful to use.
-              </p>
-              <p>
-                Currently exploring the intersection of AI and web development, with a 
-                particular interest in creating tools that enhance developer productivity 
-                and user experiences.
-              </p>
+        {/* About and Skills Section */}
+        <section className="mt-32 scroll-mt-20">
+          <div className="flex space-x-15">
+            <div className="w-1/2">
+              {/* About Me Section */}
+              <section>
+                <h2 className="text-3xl font-bold">About Me</h2>
+                <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-3xl mt-4">
+                  <p>
+                    I'm passionate about creating elegant solutions to complex problems. 
+                    With experience in full-stack development, I focus on building applications 
+                    that are not only functional but also delightful to use.
+                  </p>
+                  <p>
+                    Currently exploring the intersection of AI and web development, with a 
+                    particular interest in creating tools that enhance developer productivity 
+                    and user experiences.
+                  </p>
+                </div>
+              </section>
+            </div>
+            <div className="w-1/2">
+              {/* Skills Section */}
+              <section className="mt-12">
+                <h2 className="text-3xl font-bold">Skills</h2>
+                <Skills />
+              </section>
             </div>
           </div>
         </section>
