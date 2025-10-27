@@ -52,7 +52,7 @@ export default function Home() {
             </div>
 
             {/* Social Links */}
-            <div className="flex gap-4 pt-6 border-t border-border">
+            <div className="flex gap-4 pt-2">
               <a
                 href="https://github.com/sdewhitt"
                 target="_blank"
@@ -96,30 +96,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="scroll-mt-20">
-          <div className="mb-12 space-y-3">
-            <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl">
-              A collection of my favorite projects that showcase my skills and passion for building great software
-            </p>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2">
-            {projects.map((p, index) => (
-              <div 
-                key={p.id} 
-                className="animate-slide-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <ProjectCard project={p} />
-              </div>
-            ))}
-          </div>
-        </section>
-
+        
         {/* About and Skills Section */}
-        <section className="mt-32 scroll-mt-20">
+        <section className="mt-32 scroll-mt-20 pt-8">
           <div className="flex space-x-15">
             <div className="w-1/2">
               {/* About Me Section */}
@@ -148,6 +127,29 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="scroll-mt-20">
+          <div className="mb-12 space-y-3">
+            <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl">
+              Here are some of my favorite projects :)
+            </p>
+          </div>
+
+          <div className="grid gap-8 sm:grid-cols-2">
+            {projects.map((p, index) => (
+              <div 
+                key={p.id} 
+                className="animate-slide-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <ProjectCard project={p} />
+              </div>
+            ))}
+          </div>
+        </section>
+
       </main>
     </div>
   );
