@@ -141,7 +141,7 @@ export default function Home() {
             </div>
             <div className="w-1/2">
               {/* Skills Section */}
-              <section className="mt-12">
+              <section>
                 <h2 className="text-3xl font-bold">Skills</h2>
                 <Skills />
               </section>
