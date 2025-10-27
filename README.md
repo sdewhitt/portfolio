@@ -1,8 +1,8 @@
 # Portfolio
 
-![Code Size (bytes)](https://img.shields.io/github/languages/code-size/sdewhitt/evallm-v2)
-![Repo Size](https://img.shields.io/github/repo-size/sdewhitt/evallm-v2)
-![Last Commit](https://img.shields.io/github/last-commit/sdewhitt/evallm-v2)
+![Code Size (bytes)](https://img.shields.io/github/languages/code-size/sdewhitt/portfolio)
+![Repo Size](https://img.shields.io/github/repo-size/sdewhitt/portfolio)
+![Last Commit](https://img.shields.io/github/last-commit/sdewhitt/portfolio)
 
 <p align="left">
   <a href="https://github.com/sebilune">

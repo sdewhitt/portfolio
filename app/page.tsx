@@ -74,7 +74,7 @@ export default function Home() {
 
           <div className="flex items-center justify-center md:justify-end animate-fade-in-delay">
             <div className="relative group">
-                <div className="absolute -inset-1 bg-linear-to-r from-pink-600 via-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                <div className="absolute -inset-1 bg-linear-to-r from-emerald-600 via-purple-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 ring-1 ring-border">
                 <Image
                   src="/Headshot.JPG"
