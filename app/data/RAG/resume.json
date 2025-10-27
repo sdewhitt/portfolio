@@ -1,0 +1,18 @@
+{
+    "experience": [
+        {
+            "id" : 1,
+            "company": "Chewy Inc.",
+            "position": "Software Engineer I Intern",
+            "duration": "June 2025 - August 2025",
+            "location": "Bellevue, Washington",
+            "description": "",
+            "technologies": [
+                "Python", "TypeScript", "FastAPI", "React", "Docker", "PostgreSQL",
+                "AWS", "AWS Lambda", "AWS Elastic Container Service (ECS)", "AWS Relational Database Service (RDS)",
+                "AWS Elastic File System (EFS)", "AWS Kinesis",
+                "Git", "Jira", "Confluence"
+            ]
+        }
+    ]
+}
