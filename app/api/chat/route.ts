@@ -7,15 +7,13 @@ import { ChatOpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { HttpResponseOutputParser } from 'langchain/output_parsers';
 
-import { JSONLoader } from "langchain/document_loaders/fs/json";
 import { RunnableSequence } from '@langchain/core/runnables'
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
+import states from '@/data/states.json';
 
-const loader = new JSONLoader(
-    "app/data/states.json",
-    ["/state", "/code", "/nickname", "/website", "/admission_date", "/admission_number", "/capital_city", "/capital_url", "/population", "/population_rank", "/constitution_url", "/twitter_url"],
-);
+// Note: Importing JSON ensures it is bundled with the route and works in serverless/edge runtimes.
+// Avoid fs-based loaders in production as relative paths can fail.
 
 export const dynamic = 'force-dynamic'
 
@@ -47,7 +45,9 @@ export async function POST(req: Request) {
 
         const currentMessageContent = messages[messages.length - 1].content;
 
-        const docs = await loader.load();
+    // Convert the JSON data into a single document for RAG context
+    const textSplitter = new CharacterTextSplitter();
+    const docs = await textSplitter.createDocuments([JSON.stringify(states)]);
 
         // load a JSON object
         // const textSplitter = new CharacterTextSplitter();
