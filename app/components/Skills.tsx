@@ -22,6 +22,7 @@ const logos = [
   { name: "AWS", scale: 1.3 },
   { name: "jenkins", scale: 1.3 },
   { name: "FastAPI", scale: 1 },
+  { name: "MongoDB", scale: 1 },
 ];
 
 // Adjustable center image config
