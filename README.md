@@ -7,9 +7,7 @@ My portfolio website! MyPort, a RAG chatbot designed to answer questions about m
 ![Last Commit](https://img.shields.io/github/last-commit/sdewhitt/portfolio)
 
 <p align="left">
-  <a href="https://github.com/sebilune">
     <img src="https://skillicons.dev/icons?i=react,tailwind,ts,next,vercel,npm&perline=8" />
-  </a>
 </p>
 
 
