@@ -11,6 +11,7 @@ import { RunnableSequence } from '@langchain/core/runnables'
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
 import states from '@/data/states.json';
+import experience from '@/data/RAG/resume.json';
 
 // Note: Importing JSON ensures it is bundled with the route and works in serverless/edge runtimes.
 // Avoid fs-based loaders in production as relative paths can fail.
@@ -25,8 +26,16 @@ const formatMessage = (message: VercelChatMessage) => {
     return `${message.role}: ${message.content}`;
 };
 
-const TEMPLATE = `Answer the user's questions based only on the following context. 
-If the answer is not in the context, reply politely that you do not have that information available.:
+const TEMPLATE = `You are a helpful assistant that answers questions about Seth DeWhitt's professional experience, skills, and background.
+Base your answers ONLY on the provided context from his resume and portfolio.
+
+Guidelines:
+- Be professional but conversational
+- If asked about specific experience, provide relevant details
+- If information isn't in the context, politely state you don't have that specific information
+- Highlight relevant achievements and technologies when appropriate
+- Suggest related areas of expertise when relevant
+
 ==============================
 Context: {context}
 ==============================
@@ -47,7 +56,8 @@ export async function POST(req: Request) {
 
     // Convert the JSON data into a single document for RAG context
     const textSplitter = new CharacterTextSplitter();
-    const docs = await textSplitter.createDocuments([JSON.stringify(states)]);
+    //const docs = await textSplitter.createDocuments([JSON.stringify(states)]);
+    const docs = await textSplitter.createDocuments([JSON.stringify(experience)]);
 
         // load a JSON object
         // const textSplitter = new CharacterTextSplitter();
