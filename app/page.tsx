@@ -106,14 +106,13 @@ export default function Home() {
                 <h2 className="text-3xl font-bold">About Me</h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-3xl mt-4">
                   <p>
-                    I'm passionate about creating elegant solutions to complex problems. 
-                    With experience in full-stack development, I focus on building applications 
-                    that are not only functional but also delightful to use.
+                    I'm currently a Junior at Purdue University pursuing a B.S. in Computer Science with a concentration in Software Engineering.
+                    When I'm not coding, I'm likely practicing saxophone, arranging music, or reading up on the latest tech trends.
                   </p>
                   <p>
-                    Currently exploring the intersection of AI and web development, with a 
-                    particular interest in creating tools that enhance developer productivity 
-                    and user experiences.
+                    This past summer, I was a Software Engineering Intern at <a href="https://www.chewy.com/" className="text-foreground font-medium hover:underline">Chewy</a>,
+                    where I pioneered a powerful, yet scalable service to provide data scientists with development environments loaded with custom tooling and essential libraries,
+                    reducing expenses spent on dry-running optimization/machine learning models in the development process.
                   </p>
                 </div>
               </section>
