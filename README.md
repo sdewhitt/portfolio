@@ -1,6 +1,6 @@
 # Portfolio
 
-My portfolio website!
+My portfolio website! MyPort, a RAG chatbot designed to answer questions about my experience, is also found here.
 
 ![Code Size (bytes)](https://img.shields.io/github/languages/code-size/sdewhitt/portfolio)
 ![Repo Size](https://img.shields.io/github/repo-size/sdewhitt/portfolio)
@@ -12,6 +12,8 @@ My portfolio website!
   </a>
 </p>
 
-Development
-1. Install deps: `npm install`
-2. Run dev server: `npm run dev`
+
+MyPort future enhancements:
+
+- Adjusting base RAG setup to be hybrid, incorporate vector search with a vector db like Supabase or Pinecone
+- Storing all conversations in a database like MongoDB
