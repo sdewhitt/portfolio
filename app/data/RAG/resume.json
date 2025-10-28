@@ -2,16 +2,69 @@
     "experience": [
         {
             "id" : 1,
+            "company": "The Data Mine, Purdue University",
+            "position": "Technical Project Manager & Teaching Assistant",
+            "duration": "August 2025 - Present",
+            "location": "West Lafayette, Indiana",
+            "description": "Directing a team of 11 students in collaboration with the Practical AI Podcast (PAI) and Prediction Guard.",
+            "technologies": [
+                "GitHub", "Microsoft Teams", "Prediction Guard API"
+            ],
+            "achievements": [
+                "Spearheading the development of a Retrieval-Augmented Generation (RAG) chatbot that enhances user engagement by providing accurate, context-aware responses linked to podcast episode transcripts and timestamps.",
+                "Leading the design and implementation of a full-stack podcast generation application, enabling users to create personalized podcast episodes using voice cloning technology trained on Practical AI Podcast hosts.",
+                "Providing technical guidance and mentorship to junior team members, fostering a collaborative learning environment that emphasizes best practices in software development and project management.",
+                "Managing a team of 11 students through biweekly Agile sprints, ensuring timely delivery of project milestones and maintaining high code quality across a complex 50,000+ line codebase."
+            ]
+        },
+        {
+            "id" : 2,
             "company": "Chewy Inc.",
             "position": "Software Engineer I Intern",
             "duration": "June 2025 - August 2025",
             "location": "Bellevue, Washington",
-            "description": "",
+            "description": "Worked in the Replenishment Engineering team to build a scalable service that provides data scientists with development environments pre-loaded with custom tooling and essential libraries.",
             "technologies": [
-                "Python", "TypeScript", "FastAPI", "React", "Docker", "PostgreSQL",
+                "Python", "TypeScript", "FastAPI", "React", "Vite", "Docker", "PostgreSQL",
                 "AWS", "AWS Lambda", "AWS Elastic Container Service (ECS)", "AWS Relational Database Service (RDS)",
                 "AWS Elastic File System (EFS)", "AWS Kinesis",
-                "Git", "Jira", "Confluence"
+                "Git", "Jira", "Confluence", "Jenkins", "Terraform"
+            ],
+            "achievements": [
+                "Pioneered a service that reduced expenses spent on dry-running optimization/machine learning models in the development process.",
+                "Collaborated with cross-functional teams including data scientists, DevOps engineers, and product managers to ensure seamless integration and deployment of the service.",
+                "Minimized associated expenses by optimizing resource allocation and use using AWS Lambda, Kinesis, and Elastic File System (EFS)."
+            ]
+        },
+        {
+            "id" : 3,
+            "company": "The Online Marketplace Partnership (OMP)",
+            "position": "Software Engineering Intern",
+            "duration": "May 2024 - August 2024",
+            "location": "Remote",
+            "description": "Managed sales and advertising data across multiple e-commerce platforms for 11 clients within a unified KPI dashboard.",
+            "technologies": [
+                "Amazon Vendor Central", "Shopify", "WooCommerce", "Google Ads", "Meta Ads", "Walmart Ads"
+            ],
+            "achievements": [
+                "Integrated sales/advertising data from 5+ e-commerce platforms and 12+ databases into a unified KPI dashboard.",
+                "Connected disparate sources including Amazon, Google, Meta, Walmart, Shopify, and WooCommerce.",
+                "Enabled OMP experts to analyze data for 11 retail clients, with up to 60 performance metrics for 150 products."
+            ]
+        },
+        {
+            "id" : 4,
+            "company": "The Data Mine, Purdue University",
+            "position": "Undergraduate Data Science Researcher",
+            "duration": "August 2023 - May 2025",
+            "location": "West Lafayette, Indiana",
+            "description": "Collaborated Bayer Crop Sciences in 2023-2024 to model future climate change impacts on sweet corn yields, while in 2024-2025, partnered with Syngenta to integrate machine learning models with GxExM to predict product placement",
+            "technologies": [
+                "Python", "Pandas", "Numpy", "Scikit-learn", "XGBoost", "TensorFlow", "Matplotlib", "Seaborn", "Jupyter Notebooks"
+            ],
+            "achievements": [
+                "Optimized a LightGBM model for large-scale genomic datasets through hyperparameter tuning and cross-validation, improving Pearson correlation and reducing RMSE.",
+                "Implemented data preprocessing pipelines for quality control, including filtering genetic markers and normalizing phenotypic outliers using mixed linear models."
             ]
         }
     ]
