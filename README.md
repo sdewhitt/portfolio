@@ -11,7 +11,3 @@ My portfolio website!
     <img src="https://skillicons.dev/icons?i=react,tailwind,ts,next,vercel,npm&perline=8" />
   </a>
 </p>
-
-Development
-1. Install deps: `npm install`
-2. Run dev server: `npm run dev`
