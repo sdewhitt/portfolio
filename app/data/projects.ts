@@ -24,6 +24,7 @@ export const projects: Project[] = [
     description: "A RAG chatbot built to answer questions about my experience, integrated into this website!",
     tech: ["Next.js", "Vercel", "TypeScript", "React", "Tailwind", "OpenAI API", "LangChain", "AI SDK"],
     github: "https://github.com/sdewhitt/portfolio",
+    live: "https://www.sdewhitt.com/chat",
     image: "/bot.svg",
   },
 ];
