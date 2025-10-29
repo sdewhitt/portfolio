@@ -13,7 +13,7 @@ export default function TimelineItem({ experience }: Props) {
     experience;
 
   return (
-    <li className="relative ml-10 py-4 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-border first:before:top-6">
+    <li className="relative ml-10 py-4">
       <Link
         href={href}
         target="_blank"
