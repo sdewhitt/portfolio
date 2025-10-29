@@ -11,11 +11,11 @@ import { Skills } from "@/components/Skills";
 export default function Home() {
   return (
     <div className="bg-background text-foreground font-sans">
-        <DotPattern
+        {/*<DotPattern
             className={cn(
             "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
             )}
-        />
+        />*/}
       <main className="container mx-auto px-6 py-20 md:py-28">
         {/* Hero Section */}
         <section className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16 md:items-center mb-32">
@@ -23,7 +23,7 @@ export default function Home() {
             
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Seth DeWhitt
+              Seth DeWhitt 🎷
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
@@ -96,6 +96,11 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* Experience/Education table */}
+
+
+
         
         {/* About and Skills Section */}
         <section className="mt-32 scroll-mt-20 pt-8">
@@ -103,7 +108,7 @@ export default function Home() {
             <div className="w-1/2">
               {/* About Me Section */}
               <section>
-                <h2 className="text-3xl font-bold">About Me</h2>
+                <h2 className="text-3xl font-bold">More About Me</h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-3xl mt-4">
                   <p>
                     I'm currently a Junior at Purdue University pursuing a B.S. in Computer Science with a concentration in Software Engineering.
@@ -112,7 +117,7 @@ export default function Home() {
                   <p>
                     This past summer, I was a Software Engineering Intern at <a href="https://www.chewy.com/" className="text-foreground font-medium hover:underline">Chewy</a>,
                     where I pioneered a powerful, yet scalable service to provide data scientists with development environments loaded with custom tooling and essential libraries,
-                    reducing expenses spent on dry-running optimization/machine learning models in the development process.
+                    reducing expenses spent on dry-running optimization/machine learning models on AWS during the development process.
                   </p>
                 </div>
               </section>
