@@ -7,15 +7,16 @@ import { projects } from "./data/projects";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { Skills } from "@/components/Skills";
+import Experience from "./components/ExperienceTable/Experience";
 
 export default function Home() {
   return (
     <div className="bg-background text-foreground font-sans">
-        <DotPattern
+        {/*<DotPattern
             className={cn(
             "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
             )}
-        />
+        />*/}
       <main className="container mx-auto px-6 py-20 md:py-28">
         {/* Hero Section */}
         <section className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16 md:items-center mb-32">
@@ -23,11 +24,11 @@ export default function Home() {
             
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-              Seth DeWhitt
+              Seth DeWhitt 🎷
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                Full-Stack Software Engineer based in Seattle, WA
+                Software Engineer | Jazz Musician | Seattle, WA
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -48,6 +49,17 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 Contact Me
+              </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-foreground px-6 py-3 text-base font-semibold transition-all hover:bg-foreground hover:text-background active:scale-95"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                View Resume
               </a>
             </div>
 
@@ -96,14 +108,19 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* Experience/Education table */}
+        <Experience/>
+
+
         
         {/* About and Skills Section */}
-        <section className="mt-32 scroll-mt-20 pt-8">
+        <section id="about" className="mt-32 scroll-mt-20 pt-8">
           <div className="flex space-x-15">
             <div className="w-1/2">
               {/* About Me Section */}
               <section>
-                <h2 className="text-3xl font-bold">About Me</h2>
+                <h2 className="text-3xl font-bold">More About Me</h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-3xl mt-4">
                   <p>
                     I'm currently a Junior at Purdue University pursuing a B.S. in Computer Science with a concentration in Software Engineering.
@@ -112,7 +129,7 @@ export default function Home() {
                   <p>
                     This past summer, I was a Software Engineering Intern at <a href="https://www.chewy.com/" className="text-foreground font-medium hover:underline">Chewy</a>,
                     where I pioneered a powerful, yet scalable service to provide data scientists with development environments loaded with custom tooling and essential libraries,
-                    reducing expenses spent on dry-running optimization/machine learning models in the development process.
+                    reducing expenses spent on dry-running optimization/machine learning models on AWS during the development process.
                   </p>
                 </div>
               </section>

@@ -10,11 +10,7 @@ import { HttpResponseOutputParser } from 'langchain/output_parsers';
 import { RunnableSequence } from '@langchain/core/runnables'
 import { formatDocumentsAsString } from 'langchain/util/document';
 import { CharacterTextSplitter } from 'langchain/text_splitter';
-import states from '@/data/states.json';
 import experience from '@/data/RAG/resume.json';
-
-// Note: Importing JSON ensures it is bundled with the route and works in serverless/edge runtimes.
-// Avoid fs-based loaders in production as relative paths can fail.
 
 export const dynamic = 'force-dynamic'
 

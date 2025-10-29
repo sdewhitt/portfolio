@@ -1,0 +1,63 @@
+{
+  "career": [
+    {
+      "name": "The Data Mine, Purdue University",
+      "href": "https://datamine.purdue.edu/",
+      "title": "Technical Project Manager & Teaching Assistant (Corporate Partners Program)",
+      "logo": "/DataMine.png",
+      "start": "Aug 2025",
+      "description": [
+        "Directing a team of 11 students in collaboration with the Practical AI Podcast (PAI) and Prediction Guard",
+        "Managing implementation of a RAG chatbot with vector search to link responses to episode transcripts/timestamps",
+        "Leading design of full-stack podcast generation app using user-uploads and voice clone models trained on PAI hosts",
+        "Providing technical guidance and mentorship to junior team members, fostering a collaborative learning environment",
+        "Planning/Leading biweekly Agile sprints, coordinating tasks and progress reviews across a 50k+ line codebase"
+      ]
+    },
+    {
+      "name": "Chewy Inc.",
+      "href": "https://www.chewy.com",
+      "title": "Software Engineer I Intern",
+      "logo": "/Chewy.jpg",
+      "start": "Jun 2025",
+      "end": "Aug 2025",
+      "description": [
+        "Developed a service for launching JupyterLab sessions loaded with custom tooling and configurable compute specs, extending an internal web app using React, TypeScript, Python, FastAPI, Docker, and Okta SSO auth",
+        "Streamlined workflows for 15 data scientists via on-demand AWS Elastic Container Service (ECS) compute infrastructure using boto3",
+        "Enhanced user experience by implementing a paginated and searchable session management table",
+        "Enabled secure persistent file storage across JupyterLab sessions by mounting AWS Elastic File System (EFS) to ECS tasks",
+        "Deployed an AWS Lambda to periodically trigger backend clean-up via AWS Kinesis, using psycopg2, boto3, and EFS mounts to prune ECS tasks, clean PostgreSQL records, and enforce EFS file retention policies",
+        "Built application and AWS Infrastructure as Code (IaC) using Terraform and a Jenkins CI/CD pipeline"
+      ],
+      "links": [
+      ]
+    },
+    {
+      "name": "The Online Marketplace Partnership (OMP)",
+      "href": "https://www.ompartnership.com/",
+      "title": "Software Engineering Intern",
+      "logo": "/OMP.jpg",
+      "start": "May 2024",
+      "end": "Aug 2024",
+      "description": [
+        "Integrated sales/advertising data from 5+ e-commerce platforms and 12+ databases into a unified KPI dashboard",
+        "Connected disparate sources including Amazon, Google, Meta, Walmart, Shopify, and WooCommerce",
+        "Enabled OMP experts to analyze data for 11 retail clients, with up to 60 performance metrics for 150 products"
+      ]
+    },
+    {
+      "name": "The Data Mine, Purdue University",
+      "href": "https://www.datamine.purdue.edu/",
+      "title": "Undergraduate Data Science Researcher",
+      "logo": "/DataMine.png",
+      "start": "Aug 2023",
+      "end": "May 2025",
+      "description": [
+        "Collaborated with Bayer Crop Sciences to model future impact of climate change on corn yields, helping Bayer farming clients plan future adaptation strategies (2023-2024)",
+        "Optimized a LightGBM model for large-scale genomic datasets through hyperparameter tuning and cross-validation, improving Pearson correlation and reducing RMSE",
+        "Integrated machine learning models with GxExM to predict product placement for Syngenta (2024-2025)",
+        "Implemented data preprocessing pipelines for quality control, including filtering genetic markers and normalizing phenotypic outliers using mixed linear models"
+      ]
+    }
+  ]
+}
