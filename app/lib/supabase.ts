@@ -36,13 +36,20 @@ export interface ContentEmbedding {
 }
 
 /**
+ * Content embedding with similarity score (returned by search)
+ */
+export interface ContentEmbeddingWithSimilarity extends ContentEmbedding {
+  similarity: number;
+}
+
+/**
  * Search for similar content using vector similarity
  */
 export async function searchSimilarContent(
   embedding: number[],
   matchThreshold: number = 0.7,
   matchCount: number = 5
-): Promise<ContentEmbedding[]> {
+): Promise<ContentEmbeddingWithSimilarity[]> {
   try {
     const { data, error } = await supabase.rpc('match_content', {
       query_embedding: embedding,

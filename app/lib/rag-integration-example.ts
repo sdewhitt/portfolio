@@ -3,8 +3,8 @@
  * Add this to your existing app/api/chat/route.ts
  */
 
-import { generateEmbedding } from '@/app/lib/embeddings';
-import { searchSimilarContent } from '@/app/lib/supabase';
+import { generateEmbedding } from '@/lib/embeddings';
+import { searchSimilarContent } from '@/lib/supabase';
 
 /**
  * Get relevant context from vector database for a user query
