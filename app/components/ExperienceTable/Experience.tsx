@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ExperienceTable/Tabs";
-import careerData from "@/data/example/career.json";
-import educationData from "@/data/example/education.json";
+import careerData from "@/data/career.json";
+import educationData from "@/data/education.json";
 import { careerSchema, educationSchema } from "@/lib/schemas";
 import Timeline from "./Timeline";
 
