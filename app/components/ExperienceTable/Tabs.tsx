@@ -14,7 +14,7 @@ const TabsList = React.forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+      "relative z-10 flex w-fit items-center justify-start gap-1 rounded-t-xl rounded-b-none border border-border border-b-0 bg-stone-950 px-1.5 py-1 -mb-px after:content-[''] after:absolute after:-left-px after:top-full after:h-3 after:w-px after:bg-border before:content-[''] before:absolute before:left-0 before:top-full before:h-3 before:w-10 before:bg-stone-950",
       className,
     )}
     {...props}
@@ -29,7 +29,11 @@ const TabsTrigger = React.forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow",
+      `relative inline-flex h-9 items-center justify-center whitespace-nowrap rounded-md px-3 md:px-4 text-sm md:text-base font-medium transition duration-200 ease-out
+       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 disabled:pointer-events-none disabled:opacity-50 
+       bg-transparent text-white/90 hover:text-white 
+       data-[state=active]:text-white data-[state=active]:after:content-[''] data-[state=active]:after:absolute data-[state=active]:after:left-1 data-[state=active]:after:right-1 data-[state=active]:after:-bottom-px data-[state=active]:after:h-px
+     data-[state=active]:after:bg-yellow-400`,
       className,
     )}
     {...props}
@@ -44,7 +48,7 @@ const TabsContent = React.forwardRef<
   <TabsPrimitive.Content
     ref={ref}
     className={cn(
-      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      "mt-0 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
       className,
     )}
     {...props}

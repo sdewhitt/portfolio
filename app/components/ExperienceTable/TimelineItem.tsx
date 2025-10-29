@@ -19,7 +19,7 @@ export default function TimelineItem({ experience }: Props) {
         target="_blank"
         className="absolute -left-16 top-4 flex items-center justify-center rounded-full bg-white"
       >
-        <Avatar className="size-12 border">
+        <Avatar className="size-12 ring-1 ring-border">
           <AvatarImage
             src={logo}
             alt={name}
@@ -30,18 +30,18 @@ export default function TimelineItem({ experience }: Props) {
       </Link>
       <div className="flex flex-1 flex-col justify-start gap-1">
         {start && (
-          <time className="text-xs text-muted-foreground">
+          <time className="text-sm text-muted-foreground">
             <span>{start}</span>
             <span>{" - "}</span>
             <span>{end ? end : "Present"}</span>
           </time>
         )}
-        <h2 className="font-semibold leading-none">{name}</h2>
-        {title && <p className="text-sm text-muted-foreground">{title}</p>}
+        <h2 className="text-lg font-semibold leading-none">{name}</h2>
+        {title && <p className="text-base text-muted-foreground">{title}</p>}
         {description && (
           <ul className="ml-4 list-outside list-disc">
             {description.map((desc, i) => (
-              <li key={i} className="prose pr-8 text-sm dark:prose-invert">
+              <li key={i} className="prose pr-8 text-base dark:prose-invert">
                 {desc}
               </li>
             ))}
