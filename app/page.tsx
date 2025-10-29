@@ -19,7 +19,7 @@ export default function Home() {
         />*/}
       <main className="container mx-auto px-6 py-20 md:py-28">
         {/* Hero Section */}
-        <section className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16 md:items-center mb-32">
+        <section className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16 md:items-center mb-20">
           <div className="space-y-6 animate-fade-in">
             
             
@@ -28,40 +28,13 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                Software Engineer | Jazz Musician | Seattle, WA
+                Software Engineer <span className="text-muted-foreground/60">•</span> Jazz Musician <span className="text-muted-foreground/60">•</span> Seattle, WA
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href="#projects"
-                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background transition-all hover:scale-105 hover:shadow-lg active:scale-95"
-              >
-                View Projects
-                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-              <a
-                href="mailto:sethjtdewhitt@gmail.com"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-foreground px-6 py-3 text-base font-semibold transition-all hover:bg-foreground hover:text-background active:scale-95"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Contact Me
-              </a>
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-foreground px-6 py-3 text-base font-semibold transition-all hover:bg-foreground hover:text-background active:scale-95"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                View Resume
-              </a>
-            </div>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
+                If you have any questions about my experience, projects, or skills, start a  <a href="/chat" className="text-foreground font-medium hover:underline">chat</a>!
+            </p>
+
 
             {/* Social Links */}
             <div className="flex gap-4 pt-2">
@@ -85,6 +58,26 @@ export default function Home() {
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a
+                href="mailto:sethjtdewhitt@gmail.com"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Email"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </a>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Resume (PDF)"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </a>
             </div>
@@ -115,7 +108,7 @@ export default function Home() {
 
         
         {/* About and Skills Section */}
-        <section id="about" className="mt-32 scroll-mt-20 pt-8">
+        <section id="about" className="mt-16 scroll-mt-20 ">
           <div className="flex space-x-15">
             <div className="w-1/2">
               {/* About Me Section */}
@@ -145,7 +138,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="scroll-mt-20">
+        <section id="projects" className="scroll-mt-20 mt-10">
           <div className="mb-12 space-y-3">
             <h2 className="text-3xl md:text-4xl font-bold">Featured Projects</h2>
             <p className="text-lg text-muted-foreground max-w-2xl">

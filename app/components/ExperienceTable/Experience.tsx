@@ -9,8 +9,8 @@ export default function Experience() {
   const education = educationSchema.parse(educationData).education;
 
   return (
-    <Tabs defaultValue="work">
-      <TabsList className="mb-2 grid w-full grid-cols-2">
+    <Tabs defaultValue="work" className="flex flex-col gap-0 w-fit">
+      <TabsList className="">
         <TabsTrigger value="work">Work</TabsTrigger>
         <TabsTrigger value="education">Education</TabsTrigger>
       </TabsList>
