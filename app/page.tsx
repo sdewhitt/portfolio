@@ -4,8 +4,6 @@ import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "./data/projects";
 
-import { cn } from "@/lib/utils";
-import { DotPattern } from "@/components/ui/dot-pattern"
 import { Skills } from "@/components/Skills";
 import Experience from "./components/ExperienceTable/Experience";
 

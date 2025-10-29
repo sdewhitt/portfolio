@@ -36,7 +36,7 @@ export default function TimelineItem({ experience }: Props) {
             <span>{end ? end : "Present"}</span>
           </time>
         )}
-        <h2 className="text-lg font-semibold leading-none">{name}</h2>
+        <h3 className="text-lg font-semibold leading-none">{name}</h3>
         {title && <p className="text-base text-muted-foreground">{title}</p>}
         {description && (
           <ul className="ml-4 list-outside list-disc">

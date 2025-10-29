@@ -81,6 +81,13 @@
   }
 }
 
+h1 {
+      font-family: "Playfair Display", serif;
+    }
+h2 {
+      font-family: "Playfair Display", serif;
+    }
+
 /* Theme-aware tokens used in components */
 .bg-background { background-color: var(--background); }
 .bg-foreground { background-color: var(--foreground); }
