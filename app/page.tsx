@@ -7,6 +7,7 @@ import { projects } from "./data/projects";
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { Skills } from "@/components/Skills";
+import Experience from "./components/ExperienceTable/Experience";
 
 export default function Home() {
   return (
@@ -98,7 +99,7 @@ export default function Home() {
 
 
         {/* Experience/Education table */}
-
+        <Experience/>
 
 
         

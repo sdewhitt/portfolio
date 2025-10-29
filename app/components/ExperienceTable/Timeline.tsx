@@ -1,6 +1,6 @@
 import { Experience } from "@/lib/schemas";
-import TimelineItem from "./TimelineItem";
-import { Card, CardContent } from "./ui/Card";
+import TimelineItem from "@/components/ExperienceTable/TimelineItem";
+import { Card, CardContent } from "@/components/ExperienceTable/Card";
 
 interface Props {
   experience: Experience[];
