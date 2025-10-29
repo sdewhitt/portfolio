@@ -5,8 +5,6 @@ import { useEffect, useRef, useState } from "react";
 const logos = [
   { name: "github", scale: 0.9 },
   { name: "linux", scale: 1.2 },
-  { name: "visualstudiocode", scale: 0.95 },
-  { name: "vim", scale: 0.95 },
   { name: "python", scale: 1.0 },
   { name: "node", scale: 1.0 },
   { name: "git", scale: 0.9 },

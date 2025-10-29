@@ -28,7 +28,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-                Software Engineer | Jazz Musician | Seattle, WA
+                Software Engineer <span className="text-muted-foreground/60">•</span> Jazz Musician <span className="text-muted-foreground/60">•</span> Seattle, WA
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
