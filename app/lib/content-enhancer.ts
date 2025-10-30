@@ -2,11 +2,15 @@
  * Content enhancement utilities for making resume experiences more verbose and varied
  */
 
-import OpenAI from 'openai';
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+/**
+ * Get OpenAI client only if API key is present
+ */
+function getOpenAI() {
+  const OpenAI = require('openai').default;
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) throw new Error('OPENAI_API_KEY is not set');
+  return new OpenAI({ apiKey });
+}
 
 interface ExperienceData {
   id?: number;
@@ -57,6 +61,7 @@ Please provide:
 Format your response as JSON with these keys: summary, detailedDescription, keyContributions (array), impact, technicalContext, variations (array)`;
 
   try {
+    const openai = getOpenAI();
     const response = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
       messages: [

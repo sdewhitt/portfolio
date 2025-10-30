@@ -1,17 +1,12 @@
 #!/usr/bin/env node
-
 import * as fs from "fs";
 import * as path from "path";
 import { ExtractedContent, ContentChunk } from "./content-types";
 import { generateEnrichedEmbedding } from "../lib/embeddings";
 import { batchUpsertContentEmbeddings, ContentEmbedding } from "../lib/supabase";
 
-// Load environment variables following Next.js conventions
 import { config } from "dotenv";
-
-// Load environment variables from appropriate .env file
-const envFile = process.env.NODE_ENV === "production" ? ".env.production" : ".env.local";
-config({ path: envFile });
+config({ path: path.resolve(process.cwd(), ".env.local") });
 
 /**
  * Convert ContentChunk to ContentEmbedding with generated embeddings

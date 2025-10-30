@@ -1,8 +1,106 @@
 # Portfolio RAG System - Implementation Summary
 
-## ✅ What Has Been Created
+## 📋 Table of Contents
+1. [Auto-Sync System](#auto-sync-system)
+2. [Core Library Files](#core-library-files)
+3. [Script Files](#script-files)
+4. [Database Setup](#database-setup)
+5. [Documentation](#documentation)
+6. [Configuration](#configuration)
+7. [Usage](#usage)
+8. [Integration](#integration)
 
-### 1. Library Files (`app/lib/`)
+---
+
+## 🔄 Auto-Sync System
+
+### What Changed
+
+Instead of running manual npm scripts (`extract-content` and `push-content`) with environment variable complications, the system now **automatically syncs content when chat messages are sent**.
+
+### Auto-Sync Components
+
+#### 1. `app/lib/content-sync.ts`
+Core sync engine that:
+- Detects file changes using content hashing
+- Extracts content from resume.json and other data files
+- Generates embeddings for content chunks
+- Uploads to Supabase vector database
+- Tracks sync metadata to avoid redundant processing
+
+#### 2. `app/api/sync-content/route.ts`
+API endpoint for manual sync control:
+- `GET /api/sync-content` - Check sync status
+- `POST /api/sync-content` - Trigger manual sync
+- Query params: `?force=true`, `?useAI=true`
+
+#### 3. `app/data/RAG/AUTO-SYNC.md`
+Documentation for the auto-sync system
+
+### Modified Files for Auto-Sync
+
+#### `app/api/chat/route.ts`
+Added automatic sync trigger:
+- Checks for content changes before each chat request
+- Syncs if changes detected
+- Non-blocking - errors don't break chat
+- Falls back to static data if sync fails
+
+### How Auto-Sync Works
+
+```
+User sends chat message
+         ↓
+Check if content files changed
+         ↓
+    [Changed?]
+       ↓ Yes
+Extract content → Generate embeddings → Upload to Supabase
+       ↓ No                                    ↓
+    Skip sync                          Update metadata
+         ↓                                     ↓
+         └──────────────→ Retrieve RAG context → Generate response
+```
+
+### Auto-Sync Benefits
+
+✅ **No manual scripts** - Everything happens automatically
+✅ **No environment variable issues** - Runs in Next.js context where env vars work
+✅ **Smart caching** - Only syncs when files actually change
+✅ **Graceful fallback** - Uses static data if sync fails
+✅ **Non-blocking** - Sync errors don't break the chat
+✅ **API control** - Manual sync endpoint for testing/debugging
+
+### Sync Metadata
+
+Stored in `app/data/RAG/.sync-metadata.json`:
+```json
+{
+  "lastSync": "2025-10-29T12:00:00.000Z",
+  "fileHashes": {
+    "app/data/RAG/resume.json": "abc123",
+    "app/data/career.json": "def456"
+  },
+  "chunkCount": 15
+}
+```
+
+### Testing Auto-Sync
+
+1. Start dev server: `npm run dev`
+2. Edit `app/data/RAG/resume.json`
+3. Send a chat message
+4. Check console - you'll see sync logs
+
+Or manually test:
+```bash
+curl http://localhost:3000/api/sync-content
+curl -X POST http://localhost:3000/api/sync-content
+```
+
+---
+
+## ✅ Core Library Files (`app/lib/`)
 
 #### `supabase.ts`
 - Supabase client configuration

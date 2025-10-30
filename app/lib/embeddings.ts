@@ -2,17 +2,19 @@
  * Embedding generation utilities for RAG system
  */
 
-import OpenAI from 'openai';
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+function getOpenAI() {
+  const OpenAI = require('openai').default;
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) throw new Error('OPENAI_API_KEY is not set');
+  return new OpenAI({ apiKey });
+}
 
 /**
  * Generate embeddings using OpenAI's text-embedding-3-small model
  */
 export async function generateEmbedding(text: string): Promise<number[]> {
   try {
+    const openai = getOpenAI();
     const response = await openai.embeddings.create({
       model: 'text-embedding-3-small',
       input: text,
@@ -32,13 +34,14 @@ export async function generateEmbeddingsBatch(
   texts: string[]
 ): Promise<number[][]> {
   try {
+    const openai = getOpenAI();
     // OpenAI API supports batch processing
     const response = await openai.embeddings.create({
       model: 'text-embedding-3-small',
       input: texts,
     });
 
-    return response.data.map((item) => item.embedding);
+    return response.data.map((item: { embedding: number[] }) => item.embedding);
   } catch (error) {
     console.error('Error generating embeddings batch:', error);
     throw error;
