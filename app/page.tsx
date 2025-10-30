@@ -122,6 +122,9 @@ export default function Home() {
                     where I pioneered a powerful, yet scalable service to provide data scientists with development environments loaded with custom tooling and essential libraries,
                     reducing expenses spent on dry-running optimization/machine learning models on AWS during the development process.
                   </p>
+                  <p>
+                    For more Q&A, start a <a href="/chat" className="text-foreground font-medium hover:underline">chat</a> or <a href="mailto:sethjtdewhitt@gmail.com" className="text-foreground font-medium hover:underline">contact</a> me!
+                  </p>
                 </div>
               </section>
             </div>
