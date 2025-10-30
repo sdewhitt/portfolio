@@ -112,6 +112,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Ensure Tailwind's font-sans utility also uses the configured variable */
+.font-sans {
+  font-family: var(--font-geist-sans, ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial) !important;
+}
+
+/* Keep monospace utility semantic; if --font-geist-mono is set it will be used, otherwise fallback to system monospace */
+.font-mono {
+  font-family: var(--font-geist-mono, ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace) !important;
+}
+
 /* Small helper utilities for consistent spacing and rounded corners */
 .rounded-xl { border-radius: 0.75rem; }
 .shadow-sm { box-shadow: 0 1px 2px rgba(0,0,0,0.04); }

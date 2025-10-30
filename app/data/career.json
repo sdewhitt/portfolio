@@ -23,7 +23,7 @@
       "end": "Aug 2025",
       "description": [
         "Developed a service for launching JupyterLab sessions loaded with custom tooling and configurable compute specs, extending an internal web app using React, TypeScript, Python, FastAPI, Docker, and Okta SSO auth",
-        "Streamlined workflows for 15 data scientists via on-demand AWS Elastic Container Service (ECS) compute infrastructure using boto3",
+        "Streamlined workflows for 15 data scientists via on-demand AWS Elastic Container Service (ECS) compute infrastructure using the AWS boto3 API",
         "Enhanced user experience by implementing a paginated and searchable session management table",
         "Enabled secure persistent file storage across JupyterLab sessions by mounting AWS Elastic File System (EFS) to ECS tasks",
         "Deployed an AWS Lambda to periodically trigger backend clean-up via AWS Kinesis, using psycopg2, boto3, and EFS mounts to prune ECS tasks, clean PostgreSQL records, and enforce EFS file retention policies",
