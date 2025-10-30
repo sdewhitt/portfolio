@@ -3,24 +3,25 @@ import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { useEffect, useRef, useState } from "react";
 
 const logos = [
-  { name: "github", scale: 0.9 },
-  { name: "linux", scale: 1.2 },
-  { name: "python", scale: 1.0 },
-  { name: "node", scale: 1.0 },
-  { name: "git", scale: 0.9 },
-  { name: "docker", scale: 1.4 },
-  { name: "bash", scale: 1.2 },
-  { name: "next", scale: 1 },
-  { name: "react", scale: 1.0 },
-  { name: "typescript", scale: 0.85 },
-  { name: "postgres", scale: 1.1 },
-  { name: "tailwindcss", scale: 1.0 },
-  { name: "vitejs", scale: 1.0 },
-  { name: "java", scale: 1.3 },
+  { name: "GitHub", scale: 0.9 },
+  { name: "Linux", scale: 1.2 },
+  { name: "Python", scale: 1.0 },
+  { name: "Node.js", scale: 1.0 },
+  { name: "Git", scale: 0.9 },
+  { name: "Docker", scale: 1.4 },
+  { name: "Bash", scale: 1.2 },
+  { name: "Next.js", scale: 1 },
+  { name: "React", scale: 1.0 },
+  { name: "TypeScript", scale: 0.85 },
+  { name: "PostgreSQL", scale: 1.1 },
+  { name: "TailwindCSS", scale: 1.0 },
+  { name: "Vite", scale: 1.0 },
+  { name: "Java", scale: 1.3 },
   { name: "AWS", scale: 1.3 },
-  { name: "jenkins", scale: 1.3 },
+  { name: "Jenkins", scale: 1.3 },
   { name: "FastAPI", scale: 1 },
   { name: "MongoDB", scale: 1 },
+  { name: "Supabase", scale: 1 },
 ];
 
 // Adjustable center image config
@@ -97,28 +98,54 @@ export function Skills() {
             />
           </div>
         </div>
-        <OrbitingCircles iconSize={34} radius={130} speed={0.5}>
+        <OrbitingCircles iconSize={34} radius={135} speed={0.5}>
           {outer.map(({ name, scale = 1.0 }) => (
-            <img
+            <div
               key={name}
-              src={`/skill_logos/${name}.svg`}
-              alt={name}
-              width={100 * scale}
-              height={100 * scale}
-              style={{ objectFit: "contain", transform: `scale(${scale})` }}
-            />
+              className="group relative"
+              title={name}
+              aria-label={name}
+              tabIndex={0}
+            >
+              <img
+                src={`/skill_logos/${name}.svg`}
+                alt={name}
+                width={100 * scale}
+                height={100 * scale}
+                style={{ objectFit: "contain", transform: `scale(${scale})` }}
+              />
+              <div
+                className="pointer-events-none absolute left-1/2 -top-1.5 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded bg-black/90 px-2 py-1 text-[10px] text-white shadow-md opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus:opacity-100 dark:bg-white/90 dark:text-black z-50"
+                role="tooltip"
+              >
+                {name}
+              </div>
+            </div>
           ))}
         </OrbitingCircles>
         <OrbitingCircles iconSize={34} radius={80} reverse speed={0.4}>
           {inner.map(({ name, scale = 1.0 }) => (
-            <img
+            <div
               key={name}
-              src={`/skill_logos/${name}.svg`}
-              alt={name}
-              width={100 * scale}
-              height={100 * scale}
-              style={{ objectFit: "contain", transform: `scale(${scale})` }}
-            />
+              className="group relative"
+              title={name}
+              aria-label={name}
+              tabIndex={0}
+            >
+              <img
+                src={`/skill_logos/${name}.svg`}
+                alt={name}
+                width={100 * scale}
+                height={100 * scale}
+                style={{ objectFit: "contain", transform: `scale(${scale})` }}
+              />
+              <div
+                className="pointer-events-none absolute left-1/2 -top-1.5 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded bg-black/90 px-2 py-1 text-[10px] text-white shadow-md opacity-0 transition-opacity duration-150 group-hover:opacity-100 group-focus:opacity-100 dark:bg-white/90 dark:text-black z-50"
+                role="tooltip"
+              >
+                {name}
+              </div>
+            </div>
           ))}
         </OrbitingCircles>
       </div>
