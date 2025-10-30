@@ -10,8 +10,17 @@ My portfolio website! MyPort, a RAG chatbot designed to answer questions about m
     <img src="https://skillicons.dev/icons?i=react,tailwind,ts,next,vercel,npm&perline=8" />
 </p>
 
+## MyPort Features
 
-MyPort future enhancements:
+- **Auto-Sync RAG System**: Automatically detects changes to content files and syncs to Supabase vector database
+- **Smart Chat**: Uses OpenAI embeddings and vector search for intelligent responses
+- **Graceful Fallbacks**: Falls back to static content if vector DB is unavailable
+- **Dynamic Portfolio**: Showcase your projects, experience, and skills
 
-- Adjusting base RAG setup to be hybrid, incorporate vector search with a vector db like Supabase or Pinecone
-- Storing all conversations in a database like MongoDB
+## MyPort Future Enhancements
+
+- Store conversation history in database
+- UI button for manual sync with progress indicator
+- Support for document/PDF uploads
+- Webhook for auto-sync on git push
+- Advanced semantic chunking strategies
