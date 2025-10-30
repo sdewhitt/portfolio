@@ -6,11 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    
-    "extract": "tsx app/scripts/extract-content.ts",
-    "push": "tsx app/scripts/push-content.ts",
-    "rag:update": "npm run extract && npm run push"
+    "lint": "eslint"
   },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.53",
