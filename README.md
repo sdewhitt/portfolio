@@ -1,6 +1,6 @@
 # Portfolio
 
-My portfolio website! MyPort, a RAG chatbot designed to answer questions about my experience, is also found here.
+My [portfolio website](https://www.sdewhitt.com/)! MyPort, a RAG chatbot designed to answer questions about my experience, is also found here.
 
 ![Code Size (bytes)](https://img.shields.io/github/languages/code-size/sdewhitt/portfolio)
 ![Repo Size](https://img.shields.io/github/repo-size/sdewhitt/portfolio)
