@@ -1,19 +1,31 @@
 import Image from "next/image";
-import type { Project } from "../data/projects";
+import type { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group rounded-2xl border border-border p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-foreground/20 hover:-translate-y-1 bg-background">
+    <article className="group rounded-2xl border border-border p-6 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-foreground/20  bg-background">
       <div className="flex flex-col gap-4">
         <div className="relative h-48 w-full overflow-hidden rounded-lg bg-zinc-700 dark:bg-zinc-900">
           {project.image ? (
-            <Image 
-              src={project.image} 
-              alt={project.title} 
-              fill 
-              style={{ objectFit: "contain" }} 
-              className="transition-transform duration-300 group-hover:scale-105 p-4"
-            />
+            project.live ? (
+              <a href={project.live} target="_blank" rel="noreferrer" className="block relative h-full w-full">
+                <Image 
+                  src={project.image} 
+                  alt={project.title}
+                  fill 
+                  style={{ objectFit: "contain" }} 
+                  className="transition-transform duration-300 group-hover:scale-105 p-4"
+                />
+              </a>
+            ) : (
+              <Image 
+                src={project.image} 
+                alt={project.title}
+                fill 
+                style={{ objectFit: "contain" }} 
+                className="transition-transform duration-300 group-hover:scale-105 p-4"
+              />
+            )
           ) : (
             <div className="flex h-full w-full items-center justify-center text-sm text-muted-foreground">No Image</div>
           )}
@@ -29,9 +41,6 @@ export default function ProjectCard({ project }: { project: Project }) {
                 className="hover:text-muted-foreground transition-colors inline-flex items-center gap-2"
               >
                 {project.title}
-                <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
               </a> 
               : project.title
             }
