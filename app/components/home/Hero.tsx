@@ -1,6 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export function Hero() {
+  const images = [
+    { src: "/Me/Headshot.JPG", alt: "Headshot" },
+    { src: "/Me/sax.JPEG", alt: "Playing saxophone" },
+    { src: "/Me/informal.jpg", alt: "Picture of me!" },
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const goToPrevious = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
   return (
     <section className="grid gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16 md:items-center mb-20">
       <div className="space-y-6 animate-fade-in">
@@ -65,17 +84,59 @@ export function Hero() {
 
       <div className="flex items-center justify-center md:justify-end animate-fade-in-delay">
         <div className="relative group">
-          <div className="absolute -inset-1 bg-linear-to-r from-emerald-600 via-purple-600 to-yellow-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+          <div className="absolute -inset-1 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 rounded-2xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
           <div className="relative h-64 w-64 md:h-80 md:w-80 overflow-hidden rounded-2xl bg-zinc-100 dark:bg-zinc-900 ring-1 ring-border">
-            <Image
-              src="/Headshot.JPG"
-              alt="Seth DeWhitt"
-              fill
-              sizes="(min-width: 768px) 20rem, 16rem"
-              style={{ objectFit: "cover" }}
-              priority
-              className="transition-transform duration-300 group-hover:scale-105"
-            />
+            {/* Images with transition */}
+            {images.map((image, index) => (
+              <Image
+                key={image.src}
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(min-width: 768px) 20rem, 16rem"
+                style={{ objectFit: "cover" }}
+                priority={index === 0}
+                className={`transition-opacity duration-500 ${
+                  index === currentImageIndex ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+
+            {/* Navigation buttons */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100"
+              aria-label="Previous image"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100"
+              aria-label="Next image"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Dots indicator */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`h-1 rounded-full transition-all ${
+                    index === currentImageIndex
+                      ? "w-4 bg-white"
+                      : "w-2 bg-white/50 hover:bg-white/75"
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
