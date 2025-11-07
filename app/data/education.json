@@ -2,14 +2,15 @@
   "education": [
     {
       "name": "Purdue University",
-      "href": "https://www.purdue.edu",
-      "title": "BS in Computer Science, Software Engineering Concentration",
+      "href": "https://www.cs.purdue.edu/",
+      "title": "Bachelor of Science in Computer Science, Software Engineering Concentration",
       "logo": "/PurdueOld.png",
       "start": "Aug 2023",
       "end": "May 2027",
       "description": [
-        "Lead Tenor Saxophone in the premier Purdue Jazz Band since August 2023",
-        "President of Jazz Education Network (JEN) chapter",
+        "Technical Project Manager & Teaching Assistant in the Data Mine Corporate Partners program",
+        "Lead Tenor Sax. in the premier Purdue Jazz Band since Aug 2023; 2x outstanding soloist at the Elmhurst University Jazz Festival",
+        "President and founder of Purdue's Jazz Education Network (JEN) chapter, leading educational, interactive, and engaging events for 40+ student musicians",
         "Dean's list recipient"
       ],
       "links": [
