@@ -15,12 +15,10 @@ My [portfolio website](https://www.sdewhitt.com/)! MyPort, a RAG chatbot designe
 - **Auto-Sync RAG System**: Automatically detects changes to content files and syncs to Supabase vector database
 - **Smart Chat**: Uses OpenAI embeddings and vector search for intelligent responses
 - **Graceful Fallbacks**: Falls back to static content if vector DB is unavailable
-- **Dynamic Portfolio**: Showcase your projects, experience, and skills
+- **Dynamic Portfolio**: Showcases my projects, experience, and skills
 
 ## MyPort Future Enhancements
 
 - Store conversation history in database
 - UI button for manual sync with progress indicator
-- Support for document/PDF uploads
-- Webhook for auto-sync on git push
 - Advanced semantic chunking strategies
