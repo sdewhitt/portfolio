@@ -7,11 +7,15 @@
       "logo": "/DataMine.png",
       "start": "Aug 2025",
       "description": [
-        "Directing a team of 11 students in collaboration with the Practical AI Podcast (PAI) and Prediction Guard",
+        "Directing a team of 11 students in collaboration with the Practical AI Podcast and Prediction Guard",
+        "Working under direction and mentorship from Dan Whitenack, CEO of Prediction Guard and a Practical AI host",
         "Managing implementation of a RAG chatbot with vector search to link responses to episode transcripts/timestamps",
-        "Leading design of full-stack podcast generation app using user-uploads and voice clone models trained on PAI hosts",
-        "Providing technical guidance to team members, fostering a collaborative learning environment",
+        "Leading design of full-stack podcast generation app using user-uploads and voice clone models trained on podcast hosts",
+        "Providing technical guidance to team members, fostering a collaborative work environment",
         "Planning/Leading biweekly Agile sprints, coordinating tasks and progress reviews across a 50k+ line codebase"
+      ],
+      "links": [
+        
       ]
     },
     {
@@ -35,7 +39,7 @@
     {
       "name": "The Online Marketplace Partnership (OMP)",
       "href": "https://www.ompartnership.com/",
-      "title": "Software Engineering Intern",
+      "title": "Intern",
       "logo": "/OMP.jpg",
       "start": "May 2024",
       "end": "Aug 2024",
