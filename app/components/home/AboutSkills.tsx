@@ -11,7 +11,7 @@ export function AboutSkills() {
             <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-3xl mt-4">
               <p>
                 I'm currently a Junior at Purdue University pursuing a B.S. in Computer Science with a concentration in Software Engineering.
-                When I'm not coding, I'm likely practicing saxophone, arranging jazz music, or reading up on the latest tech trends.
+                When I'm not coding, I'm likely practicing saxophone, arranging jazz music, or seeing friends.
               </p>
               <p>
                 This past summer, I was a Software Engineering Intern at <a href="https://www.chewy.com/" className="text-foreground font-medium hover:underline">Chewy</a>,

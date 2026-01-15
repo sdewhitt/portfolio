@@ -19,7 +19,7 @@
       ]
     },
     {
-      "name": "Chewy Inc.",
+      "name": "Chewy",
       "href": "https://www.chewy.com",
       "title": "Software Engineer I Intern",
       "logo": "/Chewy.jpg",
@@ -27,11 +27,10 @@
       "end": "Aug 2025",
       "description": [
         "Developed a service for launching JupyterLab sessions loaded with custom tooling and configurable compute specs, extending an internal web app using React, TypeScript, Python, FastAPI, Docker, and Okta SSO auth",
-        "Streamlined workflows for 15 data scientists via on-demand AWS Elastic Container Service (ECS) compute infrastructure using the AWS boto3 API",
-        "Enhanced user experience by implementing a paginated and searchable session management table",
-        "Enabled secure persistent file storage across JupyterLab sessions by mounting AWS Elastic File System (EFS) to ECS tasks",
-        "Deployed an AWS Lambda to periodically trigger backend clean-up via AWS Kinesis, using psycopg2, boto3, and EFS mounts to prune ECS tasks, clean PostgreSQL records, and enforce EFS file retention policies",
-        "Built application and AWS Infrastructure as Code (IaC) using Terraform and a Jenkins CI/CD pipeline"
+        "Decreased admin overhead by 50% and enhanced service scalability using AWS Fargate",
+        "Enabled secure persistent file storage across dev sessions by linking AWS EFS to ECS and an RDS database",
+        "Automated ECS, EFS, & database maintenance with AWS Lambda and Kinesis, lowering AWS expenses by 25%",
+        "Built application and AWS IaC using Terraform and a Jenkins CI/CD pipeline to streamline deployments and updates"
       ],
       "links": [
       ]
@@ -57,8 +56,8 @@
       "start": "Aug 2023",
       "end": "May 2025",
       "description": [
-        "Collaborated with Bayer Crop Sciences to model future impact of climate change on corn yields, helping Bayer farming clients plan future adaptation strategies (2023-2024)",
-        "Optimized a LightGBM model for large-scale genomic datasets through hyperparameter tuning and cross-validation, improving Pearson correlation and reducing RMSE",
+        "Enabled climate change adaptation for Bayer farming clients by modeling future impact on corn yields (2023-2024)",
+        "Optimized a LightGBM model for genomic datasets, improving Pearson correlation and reducing RMSE by 24%",
         "Integrated machine learning models with GxExM to predict product placement for Syngenta (2024-2025)",
         "Implemented data preprocessing pipelines for quality control, including filtering genetic markers and normalizing phenotypic outliers using mixed linear models"
       ]
