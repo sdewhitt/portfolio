@@ -3,12 +3,12 @@
     {
       "name": "The Data Mine, Purdue University",
       "href": "https://datamine.purdue.edu/",
-      "title": "Project Lead & Teaching Assistant (Corporate Partners Program)",
+      "title": "Project Lead & Teaching Assistant | Practical AI Podcast",
       "logo": "/DataMine.png",
       "start": "Aug 2025",
       "description": [
         "Directing a team of 11 students in collaboration with the Practical AI Podcast and Prediction Guard",
-        "Working under direction and mentorship from Dan Whitenack, CEO of Prediction Guard and a Practical AI host",
+        "Working under direction and mentorship of Dan Whitenack, CEO of Prediction Guard and a Practical AI host",
         "Managing implementation of a RAG chatbot with vector search to link responses to episode transcripts/timestamps",
         "Leading design of full-stack podcast generation app using user-uploads and voice clone models trained on podcast hosts",
         "Providing technical guidance to team members, fostering a collaborative work environment",
@@ -30,7 +30,7 @@
         "Decreased admin overhead by 50% and enhanced service scalability using AWS Fargate",
         "Enabled secure persistent file storage across dev sessions by linking AWS EFS to ECS and an RDS database",
         "Automated ECS, EFS, & database maintenance with AWS Lambda and Kinesis, lowering AWS expenses by 25%",
-        "Built application and AWS IaC using Terraform and a Jenkins CI/CD pipeline to streamline deployments and updates"
+        "Built application and AWS IaC using Terraform and Jenkins CI/CD pipelines to decrease deployment times by 66%"
       ],
       "links": [
       ]
@@ -51,15 +51,14 @@
     {
       "name": "The Data Mine, Purdue University",
       "href": "https://www.datamine.purdue.edu/",
-      "title": "Undergraduate Data Science Researcher (Corporate Partners Program)",
+      "title": "Undergraduate Data Science Researcher | Bayer Crop Sciences, Syngenta",
       "logo": "/DataMine.png",
       "start": "Aug 2023",
       "end": "May 2025",
       "description": [
-        "Enabled climate change adaptation for Bayer farming clients by modeling future impact on corn yields (2023-2024)",
-        "Optimized a LightGBM model for genomic datasets, improving Pearson correlation and reducing RMSE by 24%",
-        "Integrated machine learning models with GxExM to predict product placement for Syngenta (2024-2025)",
-        "Implemented data preprocessing pipelines for quality control, including filtering genetic markers and normalizing phenotypic outliers using mixed linear models"
+        "Trained a LightGBM model on 500k+ rows to predict climate-driven corn yield variation for Bayer clients at 91% accuracy",
+        "Optimized model performance through feature engineering and hyperparameter tuning, reducing RMSE by 24%",
+        "Implemented data preprocessing and QC pipelines for 100M+ data points, validated using mixed linear models"
       ]
     }
   ]
