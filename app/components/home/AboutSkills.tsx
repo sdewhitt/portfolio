@@ -19,6 +19,9 @@ export function AboutSkills() {
                 reducing expenses spent on dry-running optimization/machine learning models on AWS during the development process.
               </p>
               <p>
+                Currently, I'm working on a browser extension to help users of all ages detect AI use in their social media feeds, helping them identify misinformation in an increasingly AI-driven world.
+              </p>
+              <p>
                 For more Q&A, start a <a href="/chat" className="text-foreground font-medium hover:underline">chat</a> or <a href="mailto:sethjtdewhitt@gmail.com" className="text-foreground font-medium hover:underline">contact</a> me!
               </p>
             </div>
