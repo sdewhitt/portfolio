@@ -7,7 +7,7 @@ export function Hero() {
   const images = [
     { src: "/Me/Headshot.JPG", alt: "Headshot" },
     { src: "/Me/sax.JPEG", alt: "Playing saxophone" },
-    { src: "/Me/informal.jpg", alt: "Picture of me!" },
+    { src: "/Me/skinks.jpg", alt: "Picture of me!" },
     { src: "/Me/JEN.jpg", alt: "Presenting at a Jazz Education Network workshop" },
   ];
 

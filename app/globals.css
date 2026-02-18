@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -281,4 +282,23 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Override typography plugin colors for blog posts */
+.prose {
+  --tw-prose-body: #e5e7eb;
+  --tw-prose-headings: #f3f4f6;
+  --tw-prose-lead: #d1d5db;
+  --tw-prose-bold: #f9fafb;
+  --tw-prose-counters: #d1d5db;
+  --tw-prose-bullets: #d1d5db;
+  --tw-prose-hr: #374151;
+  --tw-prose-quotes: #e5e7eb;
+  --tw-prose-quote-borders: #374151;
+  --tw-prose-captions: #9ca3af;
+  --tw-prose-code: #f3f4f6;
+  --tw-prose-links: #f3f4f6;
+  --tw-prose-invert-body: #e5e7eb;
+  --tw-prose-invert-headings: #f3f4f6;
+  --tw-prose-invert-bold: #f9fafb;
 }
