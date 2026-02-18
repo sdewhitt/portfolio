@@ -20,10 +20,42 @@ export async function GET(request: NextRequest) {
   const error = searchParams.get('error');
 
   if (error) {
-    return NextResponse.json(
-      { error: `Spotify authorization failed: ${error}` },
-      { status: 400 }
-    );
+    const errorDescription = searchParams.get('error_description') || error;
+    let debugMessage = '';
+    
+    if (error === 'invalid_request' && errorDescription.includes('redirect_uri')) {
+      debugMessage = 'This usually means the redirect_uri in your auth link doesn\'t match Spotify\'s records. Visit /api/spotify/authorize for the correct URL.';
+    }
+
+    const html = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Authorization Error</title>
+          <style>
+            body { font-family: sans-serif; padding: 40px; background: #191414; color: #fff; }
+            .container { max-width: 600px; margin: 0 auto; }
+            .error { background: #ff6b6b; padding: 15px; border-radius: 8px; margin: 20px 0; }
+            .code { font-family: monospace; word-break: break-all; color: #ff6b6b; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>✗ Authorization Failed</h1>
+            <div class="error">
+              <strong>Error:</strong> ${errorDescription}<br>
+              ${debugMessage ? '<strong>Reason:</strong> ' + debugMessage : ''}
+            </div>
+            <p><a href="/api/spotify/authorize" style="color: #1db954;">Try again with the correct URL</a></p>
+          </div>
+        </body>
+      </html>
+    `;
+    
+    return new NextResponse(html, {
+      headers: { 'Content-Type': 'text/html' },
+      status: 400,
+    });
   }
 
   if (!code) {
