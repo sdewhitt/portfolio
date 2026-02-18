@@ -13,10 +13,7 @@ export default function BlogIndexPage() {
     <div className="bg-background text-foreground font-sans">
       <main className="container mx-auto px-6 py-20 md:py-28">
         <div className="mb-12 space-y-3">
-          <h1 className="text-3xl md:text-4xl font-bold">Blog</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Thoughts on software, things I&apos;m building, and stuff I&apos;m learning.
-          </p>
+          <h1 className="text-3xl md:text-4xl font-bold">All Blog Posts</h1>
         </div>
 
         {posts.length === 0 ? (

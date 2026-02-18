@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </header>
 
           {/* Content */}
-          <article className="prose prose-neutral dark:prose-invert max-w-none
+          <article className="prose dark:prose-invert max-w-none
             prose-headings:font-bold prose-headings:tracking-tight
             prose-a:text-foreground prose-a:underline hover:prose-a:text-muted-foreground
             prose-code:bg-foreground/5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded

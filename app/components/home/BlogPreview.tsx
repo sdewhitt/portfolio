@@ -12,9 +12,9 @@ export function BlogPreview() {
     <section id="blog" className="scroll-mt-20 mt-10">
       <div className="mb-12 flex items-end justify-between gap-4">
         <div className="space-y-3">
-          <h2 className="text-3xl md:text-4xl font-bold">From the Blog</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Blog</h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Thoughts on software, things I&apos;m building, and stuff I&apos;m learning.
+            A peek into my life — inside and outside of software development
           </p>
         </div>
         <Link
