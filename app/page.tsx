@@ -4,6 +4,7 @@ import Experience from "./components/ExperienceTable/Experience";
 import { Hero } from "@/components/home/Hero";
 import { AboutSkills } from "@/components/home/AboutSkills";
 import { Projects } from "@/components/home/Projects";
+import { SpotifyPlayer } from "@/components/home/SpotifyPlayer";
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
 
         {/* Projects Section */}
         <Projects />
+
+        {/* Spotify Favorites */}
+        <SpotifyPlayer />
 
       </main>
     </div>
