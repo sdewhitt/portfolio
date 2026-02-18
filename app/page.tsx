@@ -1,9 +1,8 @@
-"use client";
-
 import Experience from "./components/ExperienceTable/Experience";
 import { Hero } from "@/components/home/Hero";
 import { AboutSkills } from "@/components/home/AboutSkills";
 import { Projects } from "@/components/home/Projects";
+import { BlogPreview } from "@/components/home/BlogPreview";
 import { SpotifyPlayer } from "@/components/home/SpotifyPlayer";
 
 export default function Home() {
@@ -23,6 +22,9 @@ export default function Home() {
 
         {/* Projects Section */}
         <Projects />
+
+        {/* Blog Preview */}
+        <BlogPreview />
 
         {/* Spotify Favorites */}
         <SpotifyPlayer />
