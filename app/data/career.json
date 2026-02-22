@@ -9,7 +9,7 @@
       "description": [
         "Directing 11 student researchers in collaboration with the Practical AI Podcast and Prediction Guard",
         "Working under direction and mentorship of Dan Whitenack, CEO of Prediction Guard and a Practical AI host",
-        "Managing implementation of a RAG chatbot with vector search to link responses to episode transcripts/timestamps",
+        "Managing implementation of a RAG chatbot with Perplexity-style citations trained on episode content",
         "Leading design of full-stack podcast generation app using user-uploads and voice clone models trained on podcast hosts",
         "Providing technical guidance to team members, fostering a collaborative work environment",
         "Planning/Leading biweekly Agile sprints, coordinating tasks and progress reviews across a 50k+ line codebase"
