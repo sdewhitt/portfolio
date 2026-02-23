@@ -4,22 +4,22 @@ import { useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const TRACK_IDS = [
-  "6B75WGGugFzGfyVWSF38Q1", // so real
-  "6ohPUY7p09Xfx2JMfX0r5t", // Duke Ellington's Sound of Love
-  "02tNuntKQsoou5T4O8meyh", // Hana
-  "4xBGYIZndfEI1puWGcyfo9", // How I Know
-  "0gX6wbxOBdh3MCN3pOaTkb", // When I Was a Child
-  "1HCscV7IBGyxnaPh2jShMP", // Raye
-  "0loJyuSFr6vVPBQSmLLrrQ", // How Deep Is Your Love
-  "4YT2Sp08acVJeA1bniNTxv", // Blues on Sunday
-  "7wtV0XXq3xxXcxdVNYe1wB", // Galactic Funk
-  "46kh51xDfr4xyKgUnnGmQU", // Here, There and Everywhere
-  "2JUQ7mV1AHk2owXLydmN4Z", // Love's Train
-  "3vxvz0JoRDvnx2jG9oPljA", // Love You Anyway
-  "3TnqliDSJY2iWjL6F38ocE", // Moment's Notice
-  "2EfF2WqwQxSTbfu0c24ZJa", // Ooooo
-  "4TYMwYxRfhcqWfxe7zbThu", // Magic Alive
-  "0Nl0zIgbfgzXwxVf0lndc3", // Sevilla Breeze
+    "6ohPUY7p09Xfx2JMfX0r5t", // Duke Ellington's Sound of Love
+    "6B75WGGugFzGfyVWSF38Q1", // so real
+    "02tNuntKQsoou5T4O8meyh", // Hana
+    "4xBGYIZndfEI1puWGcyfo9", // How I Know
+    "0gX6wbxOBdh3MCN3pOaTkb", // When I Was a Child
+    "1HCscV7IBGyxnaPh2jShMP", // Raye
+    "0loJyuSFr6vVPBQSmLLrrQ", // How Deep Is Your Love
+    "4YT2Sp08acVJeA1bniNTxv", // Blues on Sunday
+    "7wtV0XXq3xxXcxdVNYe1wB", // Galactic Funk
+    "46kh51xDfr4xyKgUnnGmQU", // Here, There and Everywhere
+    "2JUQ7mV1AHk2owXLydmN4Z", // Love's Train
+    "3vxvz0JoRDvnx2jG9oPljA", // Love You Anyway
+    "3TnqliDSJY2iWjL6F38ocE", // Moment's Notice
+    "2EfF2WqwQxSTbfu0c24ZJa", // Ooooo
+    "4TYMwYxRfhcqWfxe7zbThu", // Magic Alive
+    "0Nl0zIgbfgzXwxVf0lndc3", // Sevilla Breeze
 ];
 
 const CARD_WIDTH = 280;

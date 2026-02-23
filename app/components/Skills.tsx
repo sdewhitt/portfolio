@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { useEffect, useRef, useState } from "react";

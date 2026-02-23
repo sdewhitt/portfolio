@@ -3,14 +3,14 @@
     {
       "name": "The Data Mine, Purdue University",
       "href": "https://datamine.purdue.edu/",
-      "title": "Project Lead & Teaching Assistant | Practical AI Podcast",
+      "title": "Research Lead & Teaching Assistant | Practical AI Podcast",
       "logo": "/DataMine.png",
       "start": "Aug 2025",
       "description": [
-        "Directing 11 student researchers in collaboration with the Practical AI Podcast and Prediction Guard",
+        "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M+ listens) and Prediction Guard",
         "Working under direction and mentorship of Dan Whitenack, CEO of Prediction Guard and a Practical AI host",
-        "Managing implementation of a RAG chatbot with vector search to link responses to episode transcripts/timestamps",
-        "Leading design of full-stack podcast generation app using user-uploads and voice clone models trained on podcast hosts",
+        "Implementing a RAG chatbot with Perplexity-style citations trained on 349+ episode transcripts",
+        "Designed scalable podcast generation platform integrating LLM-produced transcripts and voice clones trained off podcast hosts",
         "Providing technical guidance to team members, fostering a collaborative work environment",
         "Planning/Leading biweekly Agile sprints, coordinating tasks and progress reviews across a 50k+ line codebase"
       ],
@@ -26,11 +26,10 @@
       "start": "Jun 2025",
       "end": "Aug 2025",
       "description": [
-        "Developed a service for launching JupyterLab sessions loaded with custom tooling and configurable compute specs, extending an internal web app using React, TypeScript, Python, FastAPI, Docker, and Okta SSO auth",
-        "Decreased admin overhead by 50% and enhanced service scalability using AWS Fargate",
-        "Enabled secure persistent file storage across dev sessions by linking AWS EFS to ECS and an RDS database",
-        "Automated ECS, EFS, & database maintenance with AWS Lambda and Kinesis, lowering AWS expenses by 25%",
-        "Built application and AWS IaC using Terraform and Jenkins CI/CD pipelines to decrease deployment times by 66%"
+        "Deployed scalable & containerized development environments with custom tooling for in-house model execution on AWS ECS/Fargate, reducing setup overhead by 80% and supporting 15+ engineers",
+        "Automated distributed system maintenance with AWS Lambda and Kinesis, lowering AWS expenses by 25%",
+        "Engineered persistent storage architecture linking Okta SSO authentication with AWS EFS, ECS, and RDS to support secure stateful development sessions across container restarts",
+        "Designed and implemented Terraform-based infrastructure provisioning and Jenkins CI/CD pipelines, decreasing deployment times by 66%"
       ],
       "links": [
       ]
