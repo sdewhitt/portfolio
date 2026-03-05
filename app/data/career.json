@@ -2,63 +2,45 @@
   "career": [
     {
       "name": "The Data Mine, Purdue University",
-      "href": "https://datamine.purdue.edu/",
-      "title": "Research Lead & Teaching Assistant | Practical AI Podcast",
-      "logo": "/DataMine.png",
-      "start": "Aug 2025",
+      "href": "",
+      "title": "Research Lead & Teaching Assistant",
+      "logo": "",
+      "start": "August 2025",
       "description": [
-        "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M+ listens) and Prediction Guard",
-        "Working under direction and mentorship of Dan Whitenack, CEO of Prediction Guard and a Practical AI host",
-        "Implementing a RAG chatbot with Perplexity-style citations trained on 349+ episode transcripts",
-        "Designed scalable podcast generation platform integrating LLM-produced transcripts and voice clones trained off podcast hosts",
-        "Providing technical guidance to team members, fostering a collaborative work environment",
-        "Planning/Leading biweekly Agile sprints, coordinating tasks and progress reviews across a 50k+ line codebase"
+        "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M listens)",
+        "Implementing RAG chatbot trained on349+ episodeswith citation-backed responses",
+        "Designed scalable podcast generation platform integrating LLM-produced transcripts and voice clone models"
       ],
-      "links": [
-        
-      ]
+      "links": []
     },
     {
       "name": "Chewy",
-      "href": "https://www.chewy.com",
-      "title": "Software Engineer I Intern | Replenishment Engineering Team",
-      "logo": "/Chewy.jpg",
-      "start": "Jun 2025",
-      "end": "Aug 2025",
+      "href": "",
+      "title": "Software Engineering Intern",
+      "logo": "",
+      "start": "June 2025",
+      "end": "August 2025",
       "description": [
-        "Deployed scalable & containerized development environments with custom tooling for in-house model execution on AWS ECS/Fargate, reducing setup overhead by 80% and supporting 15+ engineers",
-        "Automated distributed system maintenance with AWS Lambda and Kinesis, lowering AWS expenses by 25%",
-        "Engineered persistent storage architecture linking Okta SSO authentication with AWS EFS, ECS, and RDS to support secure stateful development sessions across container restarts",
-        "Designed and implemented Terraform-based infrastructure provisioning and Jenkins CI/CD pipelines, decreasing deployment times by 66%"
+        "Deployed scalable & containerized development environments with custom tooling for in-house model execution on AWS ECS/Fargate,reducing setup overhead by 80%and supporting15+ engineers",
+        "Automated distributed system maintenance with AWS Lambda and Kinesis,lowering AWS expenses by 25%",
+        "Engineeredpersistent storage architecturelinking Okta SSO authentication with AWS EFS, ECS, and RDS to support secure stateful development sessions across container restarts",
+        "Designed and implemented Terraform-based infrastructure provisioning and Jenkins CI/CD pipelines,decreasing deployment times by 66%"
       ],
-      "links": [
-      ]
+      "links": []
     },
     {
-      "name": "The Online Marketplace Partnership (OMP)",
-      "href": "https://www.ompartnership.com/",
-      "title": "Intern | Data & Analytics",
-      "logo": "/OMP.jpg",
-      "start": "May 2024",
-      "end": "Aug 2024",
-      "description": [
-        "Integrated sales/advertising data from 5+ e-commerce platforms and 12+ databases into a unified KPI dashboard",
-        "Connected disparate sources including Amazon, Google, Meta, Walmart, Shopify, and WooCommerce",
-        "Enabled OMP experts to analyze data for 11 retail clients, with up to 60 performance metrics for 150 products"
-      ]
-    },
-    {
-      "name": "The Data Mine, Purdue University",
-      "href": "https://www.datamine.purdue.edu/",
-      "title": "Undergraduate Data Science Researcher | Bayer Crop Sciences, Syngenta",
-      "logo": "/DataMine.png",
-      "start": "Aug 2023",
+      "name": "The Data Mine, Purdue University (Bayer Crop Sciences, Syngenta)",
+      "href": "",
+      "title": "Undergraduate Data Science Researcher",
+      "logo": "",
+      "start": "August 2023",
       "end": "May 2025",
       "description": [
-        "Trained a LightGBM model on 500k+ rows to predict climate-driven corn yield variation for Bayer clients at 91% accuracy",
-        "Optimized model performance through feature engineering and hyperparameter tuning, reducing RMSE by 24%",
-        "Implemented data preprocessing and QC pipelines for 100M+ data points, validated using mixed linear models"
-      ]
+        "Trained a LightGBM model on500k+ rowsto model climate change impact on corn yields at91% accuracy",
+        "Optimized model performance through feature engineering and cross-validation, reducing RMSE by24%",
+        "Implemented data preprocessing and QC pipelines for100M+ data points, validated using mixed linear models"
+      ],
+      "links": []
     }
   ]
 }
