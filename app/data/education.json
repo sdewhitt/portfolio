@@ -2,19 +2,19 @@
   "education": [
     {
       "name": "Purdue University",
-      "href": "https://www.cs.purdue.edu/",
-      "title": "Bachelor of Science in Computer Science, Software Engineering Concentration",
-      "logo": "/PurdueOld.png",
-      "start": "Aug 2023",
+      "href": "",
+      "title": "B.S. in Computer Science, Software Engineering concentration",
+      "logo": "",
+      "start": "August 2023",
       "end": "May 2027",
       "description": [
-        "Project Lead & Teaching Assistant, ex-Undergraduate Researcher in the Data Mine Corporate Partners program",
-        "Lead Tenor Sax. in the premier Purdue Jazz Band since Aug 2023; 4x outstanding soloist at the Elmhurst University Jazz Festival",
-        "President and founder of Purdue's Jazz Education Network (JEN) chapter, leading educational, interactive, and engaging events for 40+ student musicians",
-        "Dean's list recipient (3x)"
+        "GPA: 3.6/4.0",
+        "Relevant Coursework:  Data Structures, Analysis of Algorithms, Software Engineering, Systems Programming,",
+        "Computer Architecture, C Programming, Software Testing, Object-Oriented Programming, Linear Algebra",
+        "Activities:  Purdue Jazz Education Network (President), Purdue Jazz Band (Lead Tenor Saxophone)",
+        "Awards:  Elmhurst University Jazz Festival Outstanding Soloist (4x), Dean’s List (3x)"
       ],
-      "links": [
-      ]
+      "links": []
     }
   ]
 }

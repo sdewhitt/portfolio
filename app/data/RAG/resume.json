@@ -1,71 +1,111 @@
 {
     "experience": [
         {
-            "id" : 1,
+            "id": 1,
             "company": "The Data Mine, Purdue University",
-            "position": "Technical Project Manager & Teaching Assistant",
-            "duration": "August 2025 - Present",
-            "location": "West Lafayette, Indiana",
-            "description": "Directing a team of 11 students in collaboration with the Practical AI Podcast (PAI) and Prediction Guard.",
+            "position": "Research Lead & Teaching Assistant",
+            "duration": "August 2025 – Present",
+            "location": "West Lafayette, IN",
+            "description": "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M listens)",
             "technologies": [
-                "GitHub", "Microsoft Teams", "Prediction Guard API"
+                "Python",
+                "TypeScript",
+                "Firebase",
+                "Agile",
+                "RAG"
             ],
             "achievements": [
-                "Spearheading the development of a Retrieval-Augmented Generation (RAG) chatbot that enhances user engagement by providing accurate, context-aware responses linked to podcast episode transcripts and timestamps.",
-                "Leading the design and implementation of a full-stack podcast generation application, enabling users to create personalized podcast episodes using voice cloning technology trained on Practical AI Podcast hosts.",
-                "Providing technical guidance to team members, fostering a collaborative learning environment that emphasizes best practices in software development and project management.",
-                "Managing a team of 11 students through biweekly Agile sprints, ensuring timely delivery of project milestones and maintaining high code quality across a complex 50,000+ line codebase."
+                "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M listens)",
+                "Implementing RAG chatbot trained on349+ episodeswith citation-backed responses",
+                "Designed scalable podcast generation platform integrating LLM-produced transcripts and voice clone models"
             ]
         },
         {
-            "id" : 2,
-            "company": "Chewy Inc.",
-            "position": "Software Engineer I Intern",
-            "duration": "June 2025 - August 2025",
-            "location": "Bellevue, Washington",
-            "description": "Worked in the Replenishment Engineering team to build a scalable service that provides data scientists with development environments pre-loaded with custom tooling and essential libraries.",
-            "technologies": [
-                "Python", "TypeScript", "FastAPI", "React", "Vite", "Docker", "PostgreSQL",
-                "AWS", "AWS Lambda", "AWS Elastic Container Service (ECS)", "AWS Relational Database Service (RDS)",
-                "AWS Elastic File System (EFS)", "AWS Kinesis",
-                "Git", "Jira", "Confluence", "Jenkins", "Terraform"
-            ],
-            "achievements": [
-                "Pioneered a service that reduced expenses spent on dry-running optimization/machine learning models in the development process.",
-                "Collaborated with cross-functional teams including data scientists, DevOps engineers, and product managers to ensure seamless integration and deployment of the service.",
-                "Minimized associated expenses by optimizing resource allocation and use using AWS Lambda, Kinesis, and Elastic File System (EFS)."
-            ]
-        },
-        {
-            "id" : 3,
-            "company": "The Online Marketplace Partnership (OMP)",
+            "id": 2,
+            "company": "Chewy",
             "position": "Software Engineering Intern",
-            "duration": "May 2024 - August 2024",
-            "location": "Remote",
-            "description": "Managed sales and advertising data across multiple e-commerce platforms for 11 clients within a unified KPI dashboard.",
+            "duration": "June 2025 – August 2025",
+            "location": "Bellevue, WA",
+            "description": "Deployed scalable & containerized development environments with custom tooling for in-house model execution on AWS ECS/Fargate,reducing setup overhead by 80%and supporting15+ engineers",
             "technologies": [
-                "Amazon Vendor Central", "Shopify", "WooCommerce", "Google Ads", "Meta Ads", "Walmart Ads"
+                "Python",
+                "React",
+                "FastAPI",
+                "Vite",
+                "AWS",
+                "Docker",
+                "Terraform",
+                "Jenkins",
+                "PostgreSQL",
+                "CI/CD",
+                "AWS Lambda",
+                "AWS ECS",
+                "AWS EFS"
             ],
             "achievements": [
-                "Integrated sales/advertising data from 5+ e-commerce platforms and 12+ databases into a unified KPI dashboard.",
-                "Connected disparate sources including Amazon, Google, Meta, Walmart, Shopify, and WooCommerce.",
-                "Enabled OMP experts to analyze data for 11 retail clients, with up to 60 performance metrics for 150 products."
+                "Deployed scalable & containerized development environments with custom tooling for in-house model execution on AWS ECS/Fargate,reducing setup overhead by 80%and supporting15+ engineers",
+                "Automated distributed system maintenance with AWS Lambda and Kinesis,lowering AWS expenses by 25%",
+                "Engineeredpersistent storage architecturelinking Okta SSO authentication with AWS EFS, ECS, and RDS to support secure stateful development sessions across container restarts",
+                "Designed and implemented Terraform-based infrastructure provisioning and Jenkins CI/CD pipelines,decreasing deployment times by 66%"
             ]
         },
         {
-            "id" : 4,
-            "company": "The Data Mine, Purdue University",
+            "id": 3,
+            "company": "The Data Mine, Purdue University (Bayer Crop Sciences, Syngenta)",
             "position": "Undergraduate Data Science Researcher",
-            "duration": "August 2023 - May 2025",
-            "location": "West Lafayette, Indiana",
-            "description": "Collaborated Bayer Crop Sciences in 2023-2024 to model future climate change impacts on sweet corn yields, while in 2024-2025, partnered with Syngenta to integrate machine learning models with GxExM to predict product placement",
+            "duration": "August 2023 – May 2025",
+            "location": "West Lafayette, IN",
+            "description": "Trained a LightGBM model on500k+ rowsto model climate change impact on corn yields at91% accuracy",
             "technologies": [
-                "Python", "Pandas", "Numpy", "Scikit-learn", "XGBoost", "TensorFlow", "Matplotlib", "Seaborn", "Jupyter Notebooks"
+                "Python",
+                "R",
+                "Pandas",
+                "LightGBM"
             ],
             "achievements": [
-                "Optimized a LightGBM model for large-scale genomic datasets through hyperparameter tuning and cross-validation, improving Pearson correlation and reducing RMSE.",
-                "Implemented data preprocessing pipelines for quality control, including filtering genetic markers and normalizing phenotypic outliers using mixed linear models."
+                "Trained a LightGBM model on500k+ rowsto model climate change impact on corn yields at91% accuracy",
+                "Optimized model performance through feature engineering and cross-validation, reducing RMSE by24%",
+                "Implemented data preprocessing and QC pipelines for100M+ data points, validated using mixed linear models"
             ]
         }
-    ]
+    ],
+    "education": [
+        {
+            "institution": "Purdue University",
+            "degree": "B.S. in Computer Science, Software Engineering concentration",
+            "year": "August 2023 – May 2027",
+            "details": "GPA: 3.6/4.0. Relevant Coursework:  Data Structures, Analysis of Algorithms, Software Engineering, Systems Programming,. Computer Architecture, C Programming, Software Testing, Object-Oriented Programming, Linear Algebra. Activities:  Purdue Jazz Education Network (President), Purdue Jazz Band (Lead Tenor Saxophone). Awards:  Elmhurst University Jazz Festival Outstanding Soloist (4x), Dean’s List (3x)"
+        }
+    ],
+    "skills": {
+        "Languages": [
+            "Python",
+            "JavaScript/TypeScript",
+            "Java",
+            "C/C++",
+            "SQL",
+            "R"
+        ],
+        "Cloud/Data": [
+            "AWS",
+            "boto3",
+            "psycopg2",
+            "PostgreSQL",
+            "Pandas",
+            "Flyway"
+        ],
+        "Dev Tools": [
+            "Git",
+            "FastAPI",
+            "React",
+            "Node.js",
+            "Next.js",
+            "Vite",
+            "Tailwind",
+            "Docker",
+            "MongoDB",
+            "Terraform",
+            "Jenkins"
+        ]
+    }
 }

@@ -5,9 +5,11 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
+import * as crypto from 'crypto';
 import { ContentChunk } from '../scripts/content-types';
 import { generateEnrichedEmbedding } from './embeddings';
 import { batchUpsertContentEmbeddings, ContentEmbedding } from './supabase';
+import { findResumePDF, syncPDFToJsonFiles } from './pdf-parser';
 
 interface SyncMetadata {
   lastSync: string;
@@ -22,6 +24,21 @@ const WATCHED_FILES = [
   'app/data/projects.ts',
   'app/data/RAG/resume.json',
 ];
+
+/** The PDF resume is watched separately (binary file) */
+function getWatchedPDFPath(): string | null {
+  const pdf = findResumePDF();
+  if (pdf) return path.relative(process.cwd(), pdf);
+  return null;
+}
+
+/**
+ * Hash a binary file (e.g. PDF) using MD5 for change detection
+ */
+function hashBinaryFile(filePath: string): string {
+  const buffer = fs.readFileSync(filePath);
+  return crypto.createHash('md5').update(buffer).digest('hex');
+}
 
 /**
  * Simple hash function for file content
@@ -68,12 +85,13 @@ function saveSyncMetadata(metadata: SyncMetadata): void {
 /**
  * Check if content files have changed since last sync
  */
-export function hasContentChanged(): { changed: boolean; changedFiles: string[] } {
+export function hasContentChanged(): { changed: boolean; changedFiles: string[]; pdfChanged: boolean } {
   const metadata = loadSyncMetadata();
   const changedFiles: string[] = [];
+  let pdfChanged = false;
 
   if (!metadata) {
-    return { changed: true, changedFiles: WATCHED_FILES };
+    return { changed: true, changedFiles: WATCHED_FILES, pdfChanged: true };
   }
 
   for (const file of WATCHED_FILES) {
@@ -94,9 +112,30 @@ export function hasContentChanged(): { changed: boolean; changedFiles: string[] 
     }
   }
 
+  // Check PDF resume for changes
+  const pdfRelPath = getWatchedPDFPath();
+  if (pdfRelPath) {
+    const pdfAbsPath = path.join(process.cwd(), pdfRelPath);
+    try {
+      if (fs.existsSync(pdfAbsPath)) {
+        const currentHash = hashBinaryFile(pdfAbsPath);
+        const previousHash = metadata.fileHashes[pdfRelPath];
+        if (currentHash !== previousHash) {
+          changedFiles.push(pdfRelPath);
+          pdfChanged = true;
+        }
+      }
+    } catch (error) {
+      console.error(`Error checking PDF ${pdfRelPath}:`, error);
+      changedFiles.push(pdfRelPath);
+      pdfChanged = true;
+    }
+  }
+
   return {
     changed: changedFiles.length > 0,
-    changedFiles
+    changedFiles,
+    pdfChanged,
   };
 }
 
@@ -177,7 +216,98 @@ ${edu.details ? `Details: ${edu.details}` : ''}
 }
 
 /**
- * Extract content from projects
+ * Extract content from career.json
+ */
+function extractCareerContent(): ContentChunk[] {
+  const careerPath = path.join(process.cwd(), 'app/data/career.json');
+  
+  if (!fs.existsSync(careerPath)) {
+    console.warn('career.json not found, skipping extraction');
+    return [];
+  }
+
+  try {
+    const data = JSON.parse(fs.readFileSync(careerPath, 'utf-8'));
+    const chunks: ContentChunk[] = [];
+
+    if (data.career && Array.isArray(data.career)) {
+      data.career.forEach((job: any, index: number) => {
+        const descriptions = Array.isArray(job.description)
+          ? job.description.map((d: string) => `- ${d}`).join('\n')
+          : job.description || '';
+
+        chunks.push({
+          slug: `career-${index}`,
+          title: `${job.title} at ${job.name}`,
+          content: `
+Role: ${job.title}
+Company: ${job.name}
+Period: ${job.start}${job.end ? ` - ${job.end}` : ' - Present'}
+Details:\n${descriptions}
+          `.trim(),
+          metadata: {
+            contentType: 'experience',
+            company: job.name,
+            position: job.title,
+            duration: `${job.start}${job.end ? ` - ${job.end}` : ' - Present'}`,
+          }
+        });
+      });
+    }
+
+    return chunks;
+  } catch (error) {
+    console.error('Error extracting career content:', error);
+    return [];
+  }
+}
+
+/**
+ * Extract content from education.json
+ */
+function extractEducationContent(): ContentChunk[] {
+  const educationPath = path.join(process.cwd(), 'app/data/education.json');
+  
+  if (!fs.existsSync(educationPath)) {
+    console.warn('education.json not found, skipping extraction');
+    return [];
+  }
+
+  try {
+    const data = JSON.parse(fs.readFileSync(educationPath, 'utf-8'));
+    const chunks: ContentChunk[] = [];
+
+    if (data.education && Array.isArray(data.education)) {
+      data.education.forEach((edu: any, index: number) => {
+        const descriptions = Array.isArray(edu.description)
+          ? edu.description.map((d: string) => `- ${d}`).join('\n')
+          : edu.description || '';
+
+        chunks.push({
+          slug: `education-${index}`,
+          title: `${edu.title} - ${edu.name}`,
+          content: `
+Degree: ${edu.title}
+Institution: ${edu.name}
+Period: ${edu.start}${edu.end ? ` - ${edu.end}` : ' - Present'}
+Details:\n${descriptions}
+          `.trim(),
+          metadata: {
+            contentType: 'education',
+          }
+        });
+      });
+    }
+
+    return chunks;
+  } catch (error) {
+    console.error('Error extracting education content:', error);
+    return [];
+  }
+}
+
+/**
+ * Extract content from projects.ts
  */
 function extractProjectsContent(): ContentChunk[] {
   const projectsPath = path.join(process.cwd(), 'app/data/projects.ts');
@@ -187,9 +317,57 @@ function extractProjectsContent(): ContentChunk[] {
     return [];
   }
 
-  // For TypeScript files, we'd need to evaluate them or parse statically
-  // For now, we'll keep this simple and focus on JSON files
-  return [];
+  try {
+    const fileContent = fs.readFileSync(projectsPath, 'utf-8');
+    const chunks: ContentChunk[] = [];
+
+    // Extract the array contents after "= [" (the projects assignment)
+    const arrayMatch = fileContent.match(/=\s*(\[[\s\S]*\])\s*;?\s*(?:export|$)/);
+    if (!arrayMatch) {
+      console.warn('Could not find projects array in projects.ts');
+      return [];
+    }
+
+    // Clean up TS-specific syntax to make it JSON-parseable:
+    // - Quote unquoted property keys
+    // - Remove trailing commas before } or ]
+    let jsonString = arrayMatch[1]
+      .replace(/(\s)(\w+)\s*:/g, '$1"$2":')
+      .replace(/,\s*([\]}])/g, '$1');
+
+    try {
+      const projectsArray = JSON.parse(jsonString);
+      
+      for (const project of projectsArray) {
+        if (!project.id || !project.title) continue;
+        
+        const technologies = Array.isArray(project.tech) ? project.tech : [];
+
+        chunks.push({
+          slug: `project-${project.id}`,
+          title: `Project: ${project.title}`,
+          content: `
+Project: ${project.title}
+Description: ${project.description || ''}
+Technologies: ${technologies.join(', ')}
+${project.github ? `GitHub: ${project.github}` : ''}
+${project.live ? `Live: ${project.live}` : ''}
+          `.trim(),
+          metadata: {
+            contentType: 'project',
+            technologies,
+          }
+        });
+      }
+    } catch (parseError) {
+      console.error('Error parsing projects array as JSON:', parseError);
+    }
+
+    return chunks;
+  } catch (error) {
+    console.error('Error extracting projects content:', error);
+    return [];
+  }
 }
 
 /**
@@ -228,12 +406,23 @@ export async function syncContentToVectorDB(options: {
   try {
     // Check if sync is needed
     if (!forceSync) {
-      const { changed, changedFiles } = hasContentChanged();
+      const { changed, changedFiles, pdfChanged } = hasContentChanged();
       if (!changed) {
         console.log('Content unchanged, skipping sync');
         return { success: true, chunksProcessed: 0 };
       }
       console.log(`Content changed in: ${changedFiles.join(', ')}`);
+
+      // If the PDF changed, re-parse it into the JSON files first
+      if (pdfChanged) {
+        console.log('📄 PDF resume changed — re-parsing into JSON files...');
+        try {
+          await syncPDFToJsonFiles({ merge: true });
+          console.log('✓ PDF parsed and JSON files updated');
+        } catch (err) {
+          console.error('⚠️  PDF parse failed, continuing with existing JSON files:', err);
+        }
+      }
     }
 
     // Verify environment variables
@@ -259,10 +448,12 @@ export async function syncContentToVectorDB(options: {
 
     console.log('✓ Environment variables verified');
 
-    // Extract content
+    // Extract content from all sources
     console.log('📄 Extracting content...');
     const chunks: ContentChunk[] = [
       ...extractResumeContent(),
+      ...extractCareerContent(),
+      ...extractEducationContent(),
       ...extractProjectsContent(),
     ];
 
@@ -300,7 +491,7 @@ export async function syncContentToVectorDB(options: {
     const result = await batchUpsertContentEmbeddings(contentEmbeddings);
     console.log(`📊 Upload result: ${result.success} succeeded, ${result.failed} failed`);
 
-    if (result.success) {
+    if (result.failed === 0) {
       // Update sync metadata
       const newMetadata: SyncMetadata = {
         lastSync: new Date().toISOString(),
@@ -313,6 +504,15 @@ export async function syncContentToVectorDB(options: {
         if (fs.existsSync(filePath)) {
           const content = fs.readFileSync(filePath, 'utf-8');
           newMetadata.fileHashes[file] = hashContent(content);
+        }
+      }
+
+      // Also hash the PDF resume
+      const pdfRelPath = getWatchedPDFPath();
+      if (pdfRelPath) {
+        const pdfAbsPath = path.join(process.cwd(), pdfRelPath);
+        if (fs.existsSync(pdfAbsPath)) {
+          newMetadata.fileHashes[pdfRelPath] = hashBinaryFile(pdfAbsPath);
         }
       }
 
