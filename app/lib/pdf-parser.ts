@@ -969,25 +969,29 @@ function mergeAndWriteCareerJson(parsed: ParsedResume): void {
     }
   } catch { /* ignore */ }
 
-  const existingMap = new Map<string, any>();
-  for (const job of existing.career || []) {
-    existingMap.set(normalizeKey(job.name, job.title), job);
-  }
+  const existingEntries = (existing.career || []).map((job: any) => ({
+    name: job.name || '',
+    title: job.title || '',
+    entry: job,
+  }));
+
+  // Track which existing entries were matched so we can preserve unmatched ones
+  const matchedExisting = new Set<any>();
 
   const merged = parsed.experience.map(exp => {
     const { start, end } = parseDuration(exp.duration);
-    const key = normalizeKey(exp.company, exp.position);
-    const prev = existingMap.get(key);
-    
+    const prev = findBestMatch(exp.company, exp.position, existingEntries);
+    if (prev) matchedExisting.add(prev);
+
     return {
       name: exp.company,
-      href: prev?.href || '',
+      href: prev?.href ?? '',
       title: exp.position,
-      logo: prev?.logo || '',
+      logo: prev?.logo ?? '',
       start,
       ...(end ? { end } : {}),
       description: exp.achievements.length > 0 ? exp.achievements : [exp.description],
-      links: prev?.links || [],
+      links: prev?.links ?? [],
     };
   });
 
@@ -1008,25 +1012,28 @@ function mergeAndWriteEducationJson(parsed: ParsedResume): void {
     }
   } catch { /* ignore */ }
 
-  const existingMap = new Map<string, any>();
-  for (const edu of existing.education || []) {
-    existingMap.set(normalizeKey(edu.name, edu.title), edu);
-  }
+  const existingEntries = (existing.education || []).map((edu: any) => ({
+    name: edu.name || '',
+    title: edu.title || '',
+    entry: edu,
+  }));
+
+  const matchedExisting = new Set<any>();
 
   const merged = parsed.education.map(edu => {
     const { start, end } = parseDuration(edu.duration);
-    const key = normalizeKey(edu.institution, edu.degree);
-    const prev = existingMap.get(key);
+    const prev = findBestMatch(edu.institution, edu.degree, existingEntries);
+    if (prev) matchedExisting.add(prev);
 
     return {
       name: edu.institution,
-      href: prev?.href || '',
+      href: prev?.href ?? '',
       title: edu.degree,
-      logo: prev?.logo || '',
+      logo: prev?.logo ?? '',
       start,
       end: end || '',
       description: edu.details,
-      links: prev?.links || [],
+      links: prev?.links ?? [],
     };
   });
 
@@ -1036,6 +1043,47 @@ function mergeAndWriteEducationJson(parsed: ParsedResume): void {
 
 function normalizeKey(...parts: string[]): string {
   return parts.map(p => p.toLowerCase().replace(/\s+/g, ' ').trim()).join('::');
+}
+
+/**
+ * Find the best matching existing entry for a parsed entry.
+ * Tries progressively looser matching:
+ *   1. Exact normalizeKey(name, title)
+ *   2. Name-only match (ignoring title differences)
+ *   3. Substring/containment match on name (handles parenthetical suffixes)
+ */
+function findBestMatch(
+  parsedName: string,
+  parsedTitle: string,
+  existingEntries: { name: string; title: string; entry: any }[],
+): any | undefined {
+  const pName = parsedName.toLowerCase().replace(/\s+/g, ' ').trim();
+  const pTitle = parsedTitle.toLowerCase().replace(/\s+/g, ' ').trim();
+
+  // 1. Exact name+title
+  for (const e of existingEntries) {
+    const eName = e.name.toLowerCase().replace(/\s+/g, ' ').trim();
+    const eTitle = e.title.toLowerCase().replace(/\s+/g, ' ').trim();
+    if (eName === pName && eTitle === pTitle) return e.entry;
+  }
+
+  // 2. Name only (title may differ between resume versions)
+  for (const e of existingEntries) {
+    const eName = e.name.toLowerCase().replace(/\s+/g, ' ').trim();
+    if (eName === pName) return e.entry;
+  }
+
+  // 3. Containment — either direction (handles "Data Mine" vs "The Data Mine, Purdue University (Bayer...)")
+  // Strip parenthetical suffixes for comparison
+  const pNameBase = pName.replace(/\s*\(.*\)\s*$/, '').trim();
+  for (const e of existingEntries) {
+    const eNameBase = e.name.toLowerCase().replace(/\s+/g, ' ').replace(/\s*\(.*\)\s*$/, '').trim();
+    if (eNameBase && pNameBase && (eNameBase.includes(pNameBase) || pNameBase.includes(eNameBase))) {
+      return e.entry;
+    }
+  }
+
+  return undefined;
 }
 
 /**
