@@ -2,9 +2,9 @@
   "career": [
     {
       "name": "The Data Mine, Purdue University",
-      "href": "",
+      "href": "https://datamine.purdue.edu",
       "title": "Research Lead & Teaching Assistant",
-      "logo": "",
+      "logo": "/DataMine.png",
       "start": "August 2025",
       "description": [
         "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M listens)",
@@ -15,9 +15,9 @@
     },
     {
       "name": "Chewy",
-      "href": "",
+      "href": "https://www.chewy.com",
       "title": "Software Engineering Intern",
-      "logo": "",
+      "logo": "/Chewy.jpg",
       "start": "June 2025",
       "end": "August 2025",
       "description": [
@@ -30,9 +30,9 @@
     },
     {
       "name": "The Data Mine, Purdue University (Bayer Crop Sciences, Syngenta)",
-      "href": "",
+      "href": "https://datamine.purdue.edu",
       "title": "Undergraduate Data Science Researcher",
-      "logo": "",
+      "logo": "/DataMine.png",
       "start": "August 2023",
       "end": "May 2025",
       "description": [

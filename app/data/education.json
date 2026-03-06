@@ -2,9 +2,9 @@
   "education": [
     {
       "name": "Purdue University",
-      "href": "",
-      "title": "B.S. in Computer Science, Software Engineering concentration",
-      "logo": "",
+      "href": "https://www.purdue.edu",
+      "title": "B.S. in Computer Science, conc. Software Engineering & Security",
+      "logo": "/Purdue.png",
       "start": "August 2023",
       "end": "May 2027",
       "description": [
