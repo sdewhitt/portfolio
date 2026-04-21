@@ -50,7 +50,7 @@ export function Hero() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/sethdewhitt"
+            href="https://linkedin.com/in/seth-dewhitt"
             target="_blank"
             rel="noopener noreferrer"
             className="group text-muted-foreground hover:text-foreground transition-colors"
