@@ -1,46 +1,59 @@
 {
-  "career": [
-    {
-      "name": "The Data Mine, Purdue University",
-      "href": "https://datamine.purdue.edu",
-      "title": "Research Lead & Teaching Assistant",
-      "logo": "/DataMine.png",
-      "start": "August 2025",
-      "description": [
-        "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M listens)",
-        "Implementing RAG chatbot trained on 349+ episodeswith citation-backed responses",
-        "Designed scalable podcast generation platform integrating LLM-produced transcripts and voice clone models"
-      ],
-      "links": []
-    },
-    {
-      "name": "Chewy",
-      "href": "https://www.chewy.com",
-      "title": "Software Engineering Intern",
-      "logo": "/Chewy.jpg",
-      "start": "June 2025",
-      "end": "August 2025",
-      "description": [
-        "Deployed scalable & containerized development environments with custom tooling for in-house model execution on AWS ECS/Fargate,reducing setup overhead by 80% and supporting 15+ engineers",
-        "Automated distributed system maintenance with AWS Lambda and Kinesis,lowering AWS expenses by 25%",
-        "Engineeredpersistent storage architecturelinking Okta SSO authentication with AWS EFS, ECS, and RDS to support secure stateful development sessions across container restarts",
-        "Designed and implemented Terraform-based infrastructure provisioning and Jenkins CI/CD pipelines,decreasing deployment times by 66%"
-      ],
-      "links": []
-    },
-    {
-      "name": "The Data Mine, Purdue University (Bayer Crop Sciences, Syngenta)",
-      "href": "https://datamine.purdue.edu",
-      "title": "Undergraduate Data Science Researcher",
-      "logo": "/DataMine.png",
-      "start": "August 2023",
-      "end": "May 2025",
-      "description": [
-        "Trained a LightGBM model on 500k+ rows to model climate change impact on corn yields at 91% accuracy",
-        "Optimized model performance through feature engineering and cross-validation, reducing RMSE by 24%",
-        "Implemented data preprocessing and QC pipelines for 100M+ data points, validated using mixed linear models"
-      ],
-      "links": []
-    }
-  ]
+    "career": [
+        {
+        "name": "Amazon Web Services (AWS)",
+        "href": "https://aws.amazon.com",
+        "title": "Software Development Engineer Intern",
+        "logo": "/aws.jpg",
+        "start": "May 2026",
+        "end": "August 2026",
+        "description": [
+            "Incoming Summer 2026"
+        ],
+        "links": []
+        },
+        {
+        "name": "The Data Mine, Purdue University",
+        "href": "https://datamine.purdue.edu",
+        "title": "Research Lead & Teaching Assistant",
+        "logo": "/DataMine.png",
+        "start": "August 2025",
+        "end": "May 2026",
+        "description": [
+            "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M listens)",
+            "Implementing RAG chatbot trained on 349+ episodeswith citation-backed responses",
+            "Designed scalable podcast generation platform integrating LLM-produced transcripts and voice clone models"
+        ],
+        "links": []
+        },
+        {
+        "name": "Chewy",
+        "href": "https://www.chewy.com",
+        "title": "Software Engineer 1 Intern",
+        "logo": "/Chewy.jpg",
+        "start": "June 2025",
+        "end": "August 2025",
+        "description": [
+            "Deployed scalable & containerized development environments with custom tooling for in-house model execution on AWS ECS/Fargate,reducing setup overhead by 80% and supporting 15+ engineers",
+            "Automated distributed system maintenance with AWS Lambda and Kinesis,lowering AWS expenses by 25%",
+            "Engineeredpersistent storage architecturelinking Okta SSO authentication with AWS EFS, ECS, and RDS to support secure stateful development sessions across container restarts",
+            "Designed and implemented Terraform-based infrastructure provisioning and Jenkins CI/CD pipelines,decreasing deployment times by 66%"
+        ],
+        "links": []
+        },
+        {
+        "name": "The Data Mine, Purdue University - Bayer Crop Sciences, Syngenta",
+        "href": "https://datamine.purdue.edu",
+        "title": "Undergraduate Data Science Researcher",
+        "logo": "/DataMine.png",
+        "start": "August 2023",
+        "end": "May 2025",
+        "description": [
+            "Trained a LightGBM model on 500k+ rows to model climate change impact on corn yields at 91% accuracy",
+            "Optimized model performance through feature engineering and cross-validation, reducing RMSE by 24%",
+            "Implemented data preprocessing and QC pipelines for 100M+ data points, validated using mixed linear models"
+        ],
+        "links": []
+        }
+    ]
 }
