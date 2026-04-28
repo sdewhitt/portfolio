@@ -36,7 +36,7 @@ export const projects: Project[] = [
         live: "https://evallm.vercel.app/",
         image: "/EvallmLogo.png",
     },
-    {
+    /*{
         id: "proj-4",
         title: "RAG Portfolio Bot",
         description: "A RAG chatbot built to answer questions about my experience, integrated into this website!",
@@ -44,7 +44,7 @@ export const projects: Project[] = [
         github: "https://github.com/sdewhitt/portfolio",
         live: "https://www.sdewhitt.com/chat",
         image: "/bot.svg",
-    },
+    },*/
 ];
 
 export default projects;

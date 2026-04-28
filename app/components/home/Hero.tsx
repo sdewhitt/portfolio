@@ -32,10 +32,6 @@ export function Hero() {
           Software Engineer <span className="text-muted-foreground/60">•</span> Jazz Musician <span className="text-muted-foreground/60">•</span> Seattle, WA
         </p>
 
-        <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl">
-          If you have any questions about my experience, projects, or skills, start a  <a href="/chat" className="text-foreground font-medium hover:underline">chat</a>!
-        </p>
-
         {/* Social Links */}
         <div className="flex gap-4 pt-2">
           <a

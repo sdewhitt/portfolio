@@ -21,7 +21,7 @@
         "end": "May 2026",
         "description": [
             "Directing 11 student researchers in collaboration with the Practical AI Podcast (1.5M listens)",
-            "Implementing RAG chatbot trained on 349+ episodeswith citation-backed responses",
+            "Implementing RAG chatbot trained on 349+ episodes with citation-backed responses",
             "Designed scalable podcast generation platform integrating LLM-produced transcripts and voice clone models"
         ],
         "links": []
