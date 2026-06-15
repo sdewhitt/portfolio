@@ -14,7 +14,7 @@ export const projects: Project[] = [
         title: "ControVirtual",
         description: "Streamlined and upscaled use of AMD SO-101 Robot Arms for industry experts via remote use of a Meta Quest S3, voice & natural language processing, and a Vision-Language-Action (VLA) model. Honorable Mention for \"Best Use of AMD Tech\" at StarkHacks 2026.",
         tech: ['Python', 'C#', 'OpenCV', 'PyTorch', 'Flask', 'LeRobot', 'Meta Quest S3', 'AMD SO-101 Robot Arm'],
-        github: "https://github.com/sdewhitt/StarkHacks-Team-Too",
+        github: "https://github.com/sdewhitt/ControVirtual",
         live: "",
         image: "/controvirtuallive.jpg",
     },
