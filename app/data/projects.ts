@@ -27,6 +27,7 @@ export const projects: Project[] = [
         live: "",
         image: "SlopMop.svg",
     },
+    /*
     {
         id: "proj-3",
         title: "Evallm",
