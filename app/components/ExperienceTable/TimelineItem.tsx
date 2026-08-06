@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Experience } from "@/lib/schemas";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ExperienceTable/Avatar";
@@ -6,6 +7,39 @@ import Icon from "@/components/ExperienceTable/Icon";
 
 interface Props {
   experience: Experience;
+}
+
+function renderInlineLinks(text: string) {
+  const parts: React.ReactNode[] = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+
+    parts.push(
+      <a
+        key={`${match.index}-${match[1]}`}
+        href={match[2]}
+        target="_blank"
+        rel="noreferrer"
+        className="font-medium text-foreground underline underline-offset-4 hover:text-foreground/80"
+      >
+        {match[1]}
+      </a>,
+    );
+
+    lastIndex = pattern.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
 }
 
 export default function TimelineItem({ experience }: Props) {
@@ -42,7 +76,7 @@ export default function TimelineItem({ experience }: Props) {
           <ul className="ml-4 list-outside list-disc">
             {description.map((desc, i) => (
               <li key={i} className="pr-8 text-base text-muted-foreground">
-                {desc}
+                {renderInlineLinks(desc)}
               </li>
             ))}
           </ul>
