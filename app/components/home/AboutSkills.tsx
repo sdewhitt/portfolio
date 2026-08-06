@@ -18,7 +18,7 @@ export function AboutSkills() {
                 <h2 className="text-3xl font-bold">More About Me</h2>
                 <div className="space-y-4 text-lg text-muted-foreground leading-relaxed max-w-3xl mt-4">
                     <p>
-                        I'm currently a Junior at Purdue University pursuing a B.S. in Computer Science with concentrations in Software Engineering and Security.
+                        I'm a Senior at Purdue University pursuing a B.S. in Computer Science with concentrations in Software Engineering and Security.
                         When I'm not coding, I'm likely practicing saxophone, arranging jazz music, or experimenting in the kitchen.
                     </p>
                 
