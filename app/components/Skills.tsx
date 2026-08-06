@@ -8,6 +8,7 @@ const logos = [
   { name: "GitHub", scale: 0.9 },
   { name: "Linux", scale: 1.2 },
   { name: "Python", scale: 1.0 },
+  { name: "Erlang", scale: 1.0 },
   { name: "Node.js", scale: 1.0 },
   { name: "Git", scale: 0.9 },
   { name: "Docker", scale: 1.4 },
